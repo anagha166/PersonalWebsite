@@ -34,7 +34,7 @@ const AboutMe = () => {
               alt="icon"
               className="w-full h-full object-contain z-10"
             />
-            <div className="absolute top-7 border-6 rounded-full w-[32vw] h-[32vw]  border-amber-50 transition-shadow hover:shadow-2xl z-0" />
+            <div className="absolute top-7 border-6 rounded-full w-[32vw] h-[32vw] border-[#748877] transition-shadow hover:shadow-2xl z-0" />
           </motion.div>
         </div>
       </div>

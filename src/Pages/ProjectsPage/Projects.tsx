@@ -8,19 +8,20 @@ import { FaReact } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa6";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaWordpress } from "react-icons/fa";
+import lizard from "src/assets/Projects/Lizard.svg";
 
 const Projects = () => {
-  const VideoLoop = (path: string) => {
+  const VideoLoop = (fileId: string) => {
+    const videoUrl = `https://drive.google.com/file/d/${fileId}/preview`;
     return (
       <div className="w-[20vw] h-[20vw] border-2 flex items-center justify-center rounded-lg overflow-hidden shadow-md">
-        <video
-          src={path} // Update this to your actual file path
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        />
+        <iframe
+          src={videoUrl}
+          width="640"
+          height="480"
+          allow="autoplay"
+          title="Google Drive Video"
+        ></iframe>
       </div>
     );
   };
@@ -47,7 +48,7 @@ const Projects = () => {
       <div className="bg-[#748877] text-white font-mono w-[90vw] h-[20vw] rounded-4xl mx-32 my-20 p-4 flex flex-col">
         <div className=" flex justify-center items-center gap-20">
           <h1 className="text-4xl">cd my-projects</h1>
-          <p className="text-[1vw] mt-8 w-[40vw] pt-4">
+          <div className="text-[1vw] mt-8 w-[40vw] pt-4">
             Over the years, I've gained so many invaluable experiences and
             chances to follow my passions. <br className="pt-4" />
             <p className="text-[1vw] w-[40vw] pt-4">
@@ -67,12 +68,12 @@ const Projects = () => {
               <FaCss3Alt className="hover:scale-120" />
               <FaWordpress className="hover:scale-120" />
             </div>
-          </p>
+          </div>
         </div>
       </div>
       <div>
-        <svg
-        className="mx-auto"
+      <svg
+          className="mx-auto"
           width="900"
           height="200"
           viewBox="0 0 923 432"
@@ -339,17 +340,17 @@ const Projects = () => {
           <div className="grid grid-cols-3 gap-12">
             {project(
               "Little blue car with tinted windows and glowing lights",
-              "src/assets/Projects/Car.mov",
+              "1sOA-_QFZFkpbGOEOtuwEAWA38iR4Ix9g",
               "video"
             )}
             {project(
               "A snowman on a calm winters day, standing by a christmas tree",
-              "src/assets/Projects/Snowman.mov",
+              "18aq7hg7TeZZ6sfiAg56FdL3J-bwkjS8W",
               "video"
             )}
             {project(
               "My first blender endeavor, untextured but colored",
-              "src/assets/Projects/Donut.mov",
+              "1yD8b8MLdYxxpAwOsmEdku4q7WXXrmU-w",
               "video"
             )}
           </div>
@@ -364,7 +365,7 @@ const Projects = () => {
             )}
             {project(
               "Fall 2023: A self playing guitar made with my team for IEEE quarterly projects",
-              "src/assets/Projects/Guitar.mov",
+              "1aG2AoE3aque1Vt77wHr2rR48--pKkqy4",
               "video"
             )}
           </div>
@@ -394,7 +395,7 @@ const Projects = () => {
             )}
             {project(
               "The process behind an older drawing of mine, in colored pencil",
-              "src/assets/Projects/MonaLisa.mov",
+              "13ngqzH-4pSXEm8JskU_xrJQKl0RXgtTj",
               "video"
             )}
             {project(
@@ -409,7 +410,7 @@ const Projects = () => {
             )}
             {project(
               "Pixelart creation for a game I had created",
-              "src/assets/Projects/Bat.mov",
+              "1qlBA1u3uLQxWiIp7ikoHpx_FT9uqtQ4r",
               "video"
             )}
           </div>
