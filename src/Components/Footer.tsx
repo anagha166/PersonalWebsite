@@ -1,4 +1,3 @@
-import React from "react";
 import { SiGmail } from "react-icons/si";
 import { BsLinkedin } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
@@ -7,9 +6,6 @@ import { FaHeart } from "react-icons/fa";
 import { FaPaintBrush } from "react-icons/fa";
 
 const Footer = () => {
-  const btnClass =
-    "btn rounded-full text-white text-lg w-12 p-0 border-none bg-[#202020] hover:bg-[#282828] glow";
-
   return (
     <div className="bg-[#748877] w-full flex justify-between p-4">
       <div className="flex justify-start flex-col gap-2 items-center text-sm font-medium">

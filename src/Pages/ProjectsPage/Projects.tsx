@@ -1,4 +1,3 @@
-import React from "react";
 import { IoLogoFigma } from "react-icons/io5";
 import { FaJava } from "react-icons/fa";
 import { FaPython } from "react-icons/fa";
@@ -8,7 +7,6 @@ import { FaReact } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa6";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaWordpress } from "react-icons/fa";
-import lizard from "src/assets/Projects/Lizard.svg";
 
 const Projects = () => {
   const VideoLoop = (fileId: string) => {

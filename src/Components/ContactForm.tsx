@@ -1,7 +1,4 @@
 const ContactForm = () => {
-  const sendForm = () => {
-    //will handle email sending
-  };
   return (
     <div className="flex justify-center items-center min-h-screen px-4">
       <form className="w-full max-w-md p-6 rounded-lg">
