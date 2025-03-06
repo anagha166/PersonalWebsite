@@ -33,12 +33,14 @@ const Hero = ({
 
   // Managing the state for the current statement
   const statements = [
-    "I’m driven by the curiosity of how we think and interact with the world around us",
-    "(computer + cognitive)science + math",
-    "anaghakamath@my-website home %  cd landing-page", "Striving for elegant solutions that combine efficiency with meaningful user engagement."
+    "anaghakamath@my-website my-website %  cd landing-page", "I'm driven by the curiosity of how we think and interact with the world around us",
+    "(computer + cognitive) science + math",
+    "I strive to create elegant solutions that combine efficiency with meaningful user engagement.",
   ];
 
-  const [currentStatement, setCurrentStatement] = useState<string>(statements[0]);
+  const [currentStatement, setCurrentStatement] = useState<string>(
+    statements[0]
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,20 +49,20 @@ const Hero = ({
         const nextIndex = (currentIndex + 1) % statements.length;
         return statements[nextIndex];
       });
-    }, 10000); // Change every 5 seconds
+    }, 5000); // Change every 5 seconds
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="bg-[#748877] font-mono">
-      <div className="min-h-screen w-screen flex gap-[0.5vw] justify-center items-center">
+      <div className="min-h-screen w-screen flex gap-[0.1vw] justify-center items-center">
         <Icon />
         {/* Text with improved size and spacing */}
-        <div className="flex-1 text-white text-left hero-text-shadow flex flex-col items-start mt-4">
+        <div className="flex-1 text-white text-left hero-text-shadow flex flex-col items-start mt-4 pr-12">
           <h1 className="text-5xl">Hi! I'm Anagha Kamath</h1>
           <p className="text-[1.2vw] w-[40vw] pt-4 mr-10">
-            <TypingText text={currentStatement} delay={50} />
+            <TypingText text={currentStatement} delay={30} />
           </p>
         </div>
       </div>
