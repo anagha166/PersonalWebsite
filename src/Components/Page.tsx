@@ -12,7 +12,7 @@ const Page = ({ children }: PageProps) => {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col items-center py-[10vh]">
+      <div className="flex flex-col items-center bg-[#D7C59F] min-h-screen overflow-hidden">
         {children || (
           <>
             <h2 className="text-center hero-text-shadow mt-10 mb-10 text-[3.75vw]">
@@ -21,6 +21,7 @@ const Page = ({ children }: PageProps) => {
           </>
         )}
       </div>
+      <Footer />
     </div>
   );
 };
