@@ -28,6 +28,7 @@ const AboutMe = () => {
             onHoverStart={() => setImg("src/assets/AboutMe/Wave1.png")}
             onHoverEnd={() => setImg("src/assets/AboutMe/Wave2.png")}
             transition={{ type: "tween", duration: 0.5 }}
+            animate = {img}
           >
             <img
               src={img}
