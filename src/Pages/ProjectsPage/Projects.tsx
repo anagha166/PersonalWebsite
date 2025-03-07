@@ -375,7 +375,7 @@ const Projects = () => {
               "photo"
             )}
             {project(
-              "elf playing guitar made with my team for IEEE quarterly projects, using arduinos and a 3D printed stand",
+              "Self playing guitar made with my team for IEEE quarterly projects, using arduinos and a 3D printed stand",
               "1aG2AoE3aque1Vt77wHr2rR48--pKkqy4",
               "video"
             )}
