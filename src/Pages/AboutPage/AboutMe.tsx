@@ -89,7 +89,7 @@ const AboutMe = () => {
             <div className="flex flex-col px-12 py-16 w-[50vw]">
               <h1 className="text-3xl text-white">./in_my_free_time...</h1>
               <p className="text-white text-[1.2vw] pt-10">
-                You can find me designing different sites and web apps, as well
+                You can find me designing and creating various sites and apps, as well
                 as trying out different Blender rendering techniques. When I'm
                 not working, I'm likely at practice for my dance team, Raas
                 Ruckus, preparing to travel the country competing in Raas-Garba

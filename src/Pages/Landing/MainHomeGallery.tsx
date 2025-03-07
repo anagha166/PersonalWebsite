@@ -186,7 +186,7 @@ const MainHomeGallery = () => {
           the visuals and videos along the way.
         </p>
         <p className="pt-4 pr-16 text-[1vw] w-[32vw] text-white">
-          From web development to 3D modeling and printing and modeling, each
+          From web development to 3D printing and modeling, each
           project describes a bit of who I am. I hope you enjoy!
         </p>
         <Link to="/projects">

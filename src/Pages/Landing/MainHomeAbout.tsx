@@ -30,7 +30,7 @@ const MainHomeAbout = ({
         <p className="ml-8 pt-8 text-[1vw] w-[40vw] text-white ">
           I'm a second-year Math-CS major at UCSD with a minor in Cognitive
           Science, diving deep into the fascinating intersections of design,
-          technology, and our brains.
+          technology, and the human brain.
         </p>
         <p className="ml-8 pt-8 text-[1vw] w-[40vw] text-white ">
           I like creating interactive projects that both involve and intrigue my
