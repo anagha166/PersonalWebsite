@@ -32,10 +32,9 @@ const MainHomeAbout = ({
           Science, diving deep into the fascinating intersections of design,
           technology, and our brains.
         </p>
-        <p className="ml-8 pt-4 text-[1vw] w-[40vw] text-white ">
-          In my free time, you'll probably find me doodling on whatever surface
-          is nearby (usually my hands), sipping matcha while exploring a new
-          programming language, or testing my skills at the pool table.
+        <p className="ml-8 pt-8 text-[1vw] w-[40vw] text-white ">
+          I like creating interactive projects that
+          both involve and intrigue my users.
         </p>
         <Link to="/about">
           {" "}

@@ -1,4 +1,3 @@
-import React from "react";
 import ContactForm from "./ContactForm";
 
 const ContactMe = () => {
@@ -18,7 +17,7 @@ const ContactMe = () => {
                   </p>
                   <p className="pt-4">I would love to hear from you!</p>
                   <div className="flex flex-row">
-                    <img className="pt-12 w-[10vw] h-[10vw]" src="src/assets/Landing/Signature.png" alt="" />
+                    <img className="pt-12 w-[11vw] h-[11vw]" src="src/assets/Landing/Signature.png" alt="" />
                   </div>
                 </p>
               </div>

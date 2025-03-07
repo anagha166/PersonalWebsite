@@ -1,4 +1,3 @@
-import React from "react";
 import { IoLogoFigma } from "react-icons/io5";
 import { FaJava } from "react-icons/fa";
 import { FaPython } from "react-icons/fa";
@@ -8,7 +7,6 @@ import { FaReact } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa6";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaWordpress } from "react-icons/fa";
-import lizard from "src/assets/Projects/Lizard.svg";
 
 const Projects = () => {
   const VideoLoop = (fileId: string) => {
@@ -45,9 +43,9 @@ const Projects = () => {
 
   return (
     <div>
-      <div className="bg-[#748877] text-white font-mono w-[90vw] h-[20vw] rounded-4xl mx-32 my-20 p-4 flex flex-col">
+      <div className="bg-[#748877] text-white font-mono w-[90vw] h-[20vw] rounded-4xl mx-32 my-20 pb-4 flex flex-col justify center">
         <div className=" flex justify-center items-center gap-20">
-          <h1 className="text-4xl">cd my-projects</h1>
+          <h1 className="text-5xl">cd my-projects</h1>
           <div className="text-[1vw] mt-8 w-[40vw] pt-4">
             Over the years, I've gained so many invaluable experiences and
             chances to follow my passions. <br className="pt-4" />
@@ -56,23 +54,25 @@ const Projects = () => {
               there’s still so much more to be done. I’m currently working on
               new projects that I can’t wait to share soon!
             </p>
-            <div className="mt-8 pb-8 flex flex-row text-2xl items-center gap-4">
-              <p className="mr-2">Skills:</p>
-              <IoLogoFigma className="hover:scale-120" />
-              <FaJava className="hover:scale-120" />
-              <FaPython className="hover:scale-120" />
-              <BiLogoBlender className="hover:scale-120" />
-              <SiCanva className="hover:scale-120" />
-              <FaReact className="hover:scale-120" />
-              <FaHtml5 className="hover:scale-120" />
-              <FaCss3Alt className="hover:scale-120" />
-              <FaWordpress className="hover:scale-120" />
+            <div className="mt-8 pb-8 flex flex-row items-center gap-4">
+              <p className="mr-2 text-2xl">Skills:</p>
+              <div className="flex flex-row gap-3 text-4xl">
+                <IoLogoFigma className="hover:scale-120" />
+                <FaJava className="hover:scale-120" />
+                <FaPython className="hover:scale-120" />
+                <BiLogoBlender className="hover:scale-120" />
+                <SiCanva className="hover:scale-120" />
+                <FaReact className="hover:scale-120" />
+                <FaHtml5 className="hover:scale-120" />
+                <FaCss3Alt className="hover:scale-120" />
+                <FaWordpress className="hover:scale-120" />
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div>
-      <svg
+        <svg
           className="mx-auto"
           width="900"
           height="200"
@@ -319,7 +319,7 @@ const Projects = () => {
           <h1 className="text-4xl leading-[8vh]">./website development</h1>
           <div className="grid grid-cols-3 gap-12">
             {project(
-              "Website redesign for local non-profit organization ASCENDtials during a summer internship",
+              "Website Redesign for local non-profit organization, ASCENDtials",
               "src/assets/Projects/Ascendtials.png",
               "photo"
             )}
@@ -339,17 +339,17 @@ const Projects = () => {
           <h1 className="text-4xl leading-[8vh]">./3d modeling</h1>
           <div className="grid grid-cols-3 gap-12">
             {project(
-              "Little blue car with tinted windows and glowing lights",
+              "Blender - Blue car with glowing headlights and tinted windows",
               "1sOA-_QFZFkpbGOEOtuwEAWA38iR4Ix9g",
               "video"
             )}
             {project(
-              "A snowman on a calm winters day, standing by a christmas tree",
+              "Blender - Winter Scene",
               "18aq7hg7TeZZ6sfiAg56FdL3J-bwkjS8W",
               "video"
             )}
             {project(
-              "My first blender endeavor, untextured but colored",
+              "Blender - Donut with sprinkles",
               "1yD8b8MLdYxxpAwOsmEdku4q7WXXrmU-w",
               "video"
             )}
@@ -359,12 +359,12 @@ const Projects = () => {
           <h1 className="text-4xl leading-[8vh]">./hardware</h1>
           <div className="grid grid-cols-3 gap-12">
             {project(
-              "Winter 2023: A 'magic mirror' that compliments you based of of your clothes, made with my team for IEEE quarterly projects",
+              "'Magic Mirror'for IEEE quarterly projects. Uses ChatGpt AI to compliment photograph",
               "src/assets/Projects/Mirror.png",
               "photo"
             )}
             {project(
-              "Fall 2023: A self playing guitar made with my team for IEEE quarterly projects",
+              "elf playing guitar made with my team for IEEE quarterly projects, using arduinos and a 3D printed stand",
               "1aG2AoE3aque1Vt77wHr2rR48--pKkqy4",
               "video"
             )}
@@ -374,42 +374,42 @@ const Projects = () => {
           <h1 className="text-4xl leading-[8vh]">./2d art and design</h1>
           <div className="grid grid-cols-3 gap-12">
             {project(
-              "A portrait of me and my father, made as a gift",
+              "Family portrait - pencil sketch",
               "src/assets/Projects/Annu.png",
               "photo"
             )}
             {project(
-              "A portrait made with multiple reference photos online",
+              "Portrait - pencil sketch",
               "src/assets/Projects/GreekTragedy.png",
               "photo"
             )}
             {project(
-              "A play on line work and detail",
+              "Lemur - pencil sketch",
               "src/assets/Projects/Lemur.png",
               "photo"
             )}
             {project(
-              "Designed a car for my younger brother, featuring his favorite superheroes",
+              "Car designed for my younger brother, featuring his favorite superheroes",
               "src/assets/Projects/Marvel.png",
               "photo"
             )}
             {project(
-              "The process behind an older drawing of mine, in colored pencil",
+              "Mona Lisa, recreated with prismacolor color pencils",
               "13ngqzH-4pSXEm8JskU_xrJQKl0RXgtTj",
               "video"
             )}
             {project(
-              "Tempura painting from an old favorite TV show",
+              "Wandavision portrait, made with tempera and prismacolor pencils",
               "src/assets/Projects/Wanda.png",
               "photo"
             )}
             {project(
-              "A labor of love, what started as a simple experimentation with oil paint has now become my favorite pastime",
+              "Portrait, made with oil paint",
               "src/assets/Projects/PearlGirl.png",
               "photo"
             )}
             {project(
-              "Pixelart creation for a game I had created",
+              "Bat animation for a previous project, made in Pixelart",
               "1qlBA1u3uLQxWiIp7ikoHpx_FT9uqtQ4r",
               "video"
             )}

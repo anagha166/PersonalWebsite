@@ -1,8 +1,6 @@
 import "simplebar-react/dist/simplebar.min.css";
-import SimpleBar from "simplebar-react";
 import Navbar from "./NavBar";
 import Footer from "./Footer";
-import { baseURL } from "../Utils/info";
 
 interface PageProps {
   children?: React.ReactNode;
