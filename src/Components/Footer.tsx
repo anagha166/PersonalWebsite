@@ -21,7 +21,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/anagha166/"
+          href="https://www.linkedin.com/in/anagha-k-b00117266/"
           target="_blank"
           title="LinkedIn"
         >
@@ -33,7 +33,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://www.instagram.com/_anagha_/"
+          href="https://www.instagram.com/anagha_kamath/?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr#"
           target="_blank"
           title="Instagram"
         >
@@ -41,7 +41,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://www.devpost.com/anagha166"
+          href="https://www.instagram.com/art.by.anagha/?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr#"
           target="_blank"
           title="Art Account"
         >

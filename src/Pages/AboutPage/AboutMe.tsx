@@ -21,9 +21,10 @@ const AboutMe = () => {
           <p className="text-white text-[1.2vw] pt-10">
             Hi! I'm a full-stack developer with a passion for problem-solving
             and art. I am currently based in San Diego, pursing my Bachelor's
-            degree in Mathematics-Computer Science at UCSD.
+            degree in Mathematics-Computer Science at UCSD, minoring in
+            Cognitive Science.
           </p>
-          <p className="text-white text-[1.2vw] pt-10">
+          <p className="text-white text-[1.2vw] pt-5">
             When I’m not immersed in algorithms and equations, you’ll probably
             find me doodling on whatever surface is nearby (usually my hands),
             sipping matcha while exploring the nuances of a new programming
@@ -54,10 +55,10 @@ const AboutMe = () => {
             <h1 className="text-3xl text-white">./my_background</h1>
             <p className="text-white text-[1.2vw] pt-10">
               My love for programming began in highschool, through developing
-              and designing various java games on eclipse. I loved the chance to
+              and designing various java games on Eclipse. I loved the chance to
               solve the logic puzzles I encountered along the way, and relished
               the creative process of designing the games. Web development gives
-              me the opportunity to combine my passions for programming and art, 
+              me the opportunity to combine my passions for programming and art,
               allowing me to create interactive and visually stunning websites.
             </p>
             <p className="text-white text-[1.2vw] pt-5">
@@ -88,12 +89,12 @@ const AboutMe = () => {
             <div className="flex flex-col px-12 py-16 w-[50vw]">
               <h1 className="text-3xl text-white">./in_my_free_time...</h1>
               <p className="text-white text-[1.2vw] pt-10">
-                you can find me designing different sites and web apps, as well
+                You can find me designing different sites and web apps, as well
                 as trying out different Blender rendering techniques. When I'm
                 not working, I'm likely at practice for my dance team, Raas
                 Ruckus, preparing to travel the country competing in Raas-Garba
                 style dance. Outside of school, I love making memories with my
-                family and friends, playing video games like Bopl, and learning
+                family and friends, playing games like Bopl Battle, and learning
                 new languages.
               </p>
             </div>
