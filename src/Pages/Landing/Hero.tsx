@@ -60,7 +60,7 @@ const Hero = ({
         <Icon />
         {/* Text with improved size and spacing */}
         <div className="flex-1 text-white text-left hero-text-shadow flex flex-col items-start mt-4 pr-12">
-          <h1 className="text-5xl">Hi! I'm Anagha Kamath</h1>
+          <h1 className="text-[3.5vw]">Hi! I'm Anagha Kamath</h1>
           <p className="text-[1.2vw] w-[40vw] pt-4 mr-10">
             <TypingText text={currentStatement} delay={30} />
           </p>

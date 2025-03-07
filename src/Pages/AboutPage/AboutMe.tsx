@@ -7,11 +7,11 @@ const AboutMe = () => {
     <div className="flex font-mono flex-col items-center justify-center min-h-screen">
       <div className="flex flex-row my-24">
         <div className="bg-[#748877] w-[40vw] h-[40vw] rounded-4xl p-20 mx-16 font-mono">
-          <h1 className="text-4xl text-white">cd about-me</h1>
+          <h1 className="text-5xl text-white">cd about-me</h1>
           <p className="text-white text-[1.2vw] pt-10">
-            I’m a second-year Math-CS major at UCSD with a minor in Cognitive
-            Science (ML & Neuroscience), diving deep into the fascinating
-            intersections of logic, technology, and the brain.
+            Hi! I'm a full-stack developer with a passion for problem-solving
+            and art. I am currently based in San Diego, pursing my Bachelor's
+            degree in Mathematics-Computer Science at UCSD.
           </p>
           <p className="text-white text-[1.2vw] pt-10">
             When I’m not immersed in algorithms and equations, you’ll probably
@@ -27,7 +27,7 @@ const AboutMe = () => {
             onHoverStart={() => setImg("src/assets/AboutMe/Wave1.png")}
             onHoverEnd={() => setImg("src/assets/AboutMe/Wave2.png")}
             transition={{ type: "tween", duration: 0.5 }}
-            animate = {img}
+            animate={img}
           >
             <img
               src={img}
@@ -38,52 +38,100 @@ const AboutMe = () => {
           </motion.div>
         </div>
       </div>
-      <div className="bg-[#748877] w-[90vw] my-24 rounded-4xl justify-center items-center mx-16 py-10 flex flex-col gap-20">
+      <div className="bg-[#748877] w-[90vw] my-24 rounded-4xl justify-center items-center mx-16 p-4 flex flex-col gap-10">
         <div className="flex flex-row p-4 gap-5">
           <div className="flex flex-col p-12 w-[50vw]">
-            <h1 className="text-3xl text-white">./code + art</h1>
+            <h1 className="text-3xl text-white">./my_background</h1>
             <p className="text-white text-[1.2vw] pt-10">
-              I’m a second-year Math-CS major at UCSD with a minor in Cognitive
-              Science (ML & Neuroscience), diving deep into the fascinating
-              intersections of logic, technology, and the brain.
+              My love for programming began in highschool, through developing
+              and designing various java games on eclipse. I loved the chance to
+              solve the logic puzzles I encountered along the way, and relished
+              the creative process of designing the games. Web development gives
+              me the opportunity to combine my passions for programming and art, 
+              allowing me to create interactive and visually stunning websites.
+            </p>
+            <p className="text-white text-[1.2vw] pt-5">
+              I discovered cognitive science later on, and fell in love with the
+              fact that it allowed me a chance to explore both the worlds of
+              biology and design. The intersection of these two fields allows me
+              a better undestanding on how different layouts impact our
+              experiences with technology.
             </p>
           </div>
-          <div className="border-2 border-amber-50 rounded-4xl w-[30vw] h-[30vw] mx-16 font-mono"></div>
+          <div className="rounded-4xl w-[30vw] h-[30vw] m-16 font-mono">
+            <img
+              className="w-[30vw] h-[30vw] flex items-center justify-center rounded-4xl overflow-hidden object-cover"
+              src="src/assets/AboutMe/Photoshoot.jpg"
+            />
+          </div>
         </div>
       </div>
-      <div className="bg-[#748877] w-[90vw] my-24 rounded-4xl justify-center items-center mx-16 py-10 flex flex-col gap-20">
+      <div className="bg-[#748877] w-[90vw] my-24 rounded-4xl justify-center items-center mx-16 p-4 flex flex-col gap-10">
         <div className="flex flex-row p-4 gap-5">
-          <div className="flex flex-col p-12 w-[50vw]">
-            <h1 className="text-3xl text-white">./in_my_free_time...</h1>
-            <p className="text-white text-[1.2vw] pt-10">
-              I’m a second-year Math-CS major at UCSD with a minor in Cognitive
-              Science (ML & Neuroscience), diving deep into the fascinating
-              intersections of logic, technology, and the brain.
-            </p>
+          <div className="flex flex-row p-12 gap-5">
+            <div className="rounded-4xl w-[30vw] h-[30vw] mx-16 font-mono">
+              <img
+                className="w-[40vw] h-[30vw] flex items-center justify-center rounded-4xl overflow-hidden object-cover"
+                src="src/assets/AboutMe/Window.png"
+              />
+            </div>
+            <div className="flex flex-col px-12 py-16 w-[50vw]">
+              <h1 className="text-3xl text-white">./in_my_free_time...</h1>
+              <p className="text-white text-[1.2vw] pt-10">
+                you can find me designing different sites and web apps, as well
+                as trying out different Blender rendering techniques. When I'm
+                not working, I'm likely at practice for my dance team, Raas
+                Ruckus, preparing to travel the country competing in Raas-Garba
+                style dance. Outside of school, I love making memories with my
+                family and friends, playing video games like Bopl, and learning
+                new languages.
+              </p>
+            </div>
           </div>
-          <div className="border-2 border-amber-50 rounded-4xl w-[30vw] h-[30vw] mx-16 font-mono"></div>
         </div>
-        <div className="flex flex-row p-4 gap-5">
-          <div className="border-2 border-amber-50 rounded-4xl w-[30vw] h-[30vw] mx-16 font-mono"></div>
-          <div className="flex flex-col p-12 w-[50vw] justify-right align-right">
-            <h1 className="text-3xl text-white">./you_can_find_me</h1>
-            <p className="text-white text-[1.2vw] pt-10">
-              I’m a second-year Math-CS major at UCSD with a minor in Cognitive
-              Science (ML & Neuroscience), diving deep into the fascinating
-              intersections of logic, technology, and the brain.
-            </p>
+      </div>
+      <div className="bg-[#748877] text-white w-[90vw] my-24 rounded-4xl justify-center items-center mx-16 flex flex-col gap-5">
+        <h1 className="text-5xl pt-20">cd my-gallery</h1>
+        <div className="flex flex-row pt-15 gap-5">
+          <div className="rounded-4xl w-[25vw] h-[25vw] font-mono">
+            <img
+              className="hover:border-2 border-amber-50 w-[25vw] h-[25vw] flex items-center justify-center rounded-2xl overflow-hidden object-cover"
+              src="src/assets/AboutMe/NewYawk.png"
+            />
+          </div>
+          <div className="rounded-4xl w-[25vw] h-[25vw]  font-mono">
+            <img
+              className="hover:border-2 border-amber-50 w-[25vw] h-[25vw] flex items-center justify-center rounded-2xl overflow-hidden object-cover"
+              src="src/assets/AboutMe/Ruckus.png"
+            />
+          </div>
+          <div className="rounded-4xl w-[25vw] h-[25vw]  font-mono">
+            <img
+              className="w-[25vw] h-[25vw] hover:border-2 border-amber-50 flex items-center justify-center rounded-2xl overflow-hidden object-cover"
+              src="src/assets/AboutMe/Workshop.png"
+            />
           </div>
         </div>
-        <div className="flex flex-row p-4 gap-12">
-          <div className="border-2 border-amber-50 rounded-4xl w-[25vw] h-[25vw]  font-mono"></div>
-          <div className="border-2 border-amber-50 rounded-4xl w-[25vw] h-[25vw] font-mono"></div>
-          <div className="border-2 border-amber-50 rounded-4xl w-[25vw] h-[25vw] font-mono"></div>
+        <div className="flex flex-row px-2 pb-20 gap-5">
+          <div className="rounded-4xl w-[25vw] h-[25vw]  font-mono">
+            <img
+              className="hover:border-2 border-amber-50 w-[25vw] h-[25vw] flex items-center justify-center rounded-2xl overflow-hidden object-cover"
+              src="src/assets/AboutMe/MeAndCat.png"
+            />
+          </div>
+          <div className="rounded-4xl w-[25vw] h-[25vw]  font-mono">
+            <img
+              className="hover:border-2 border-amber-50 w-[25vw] h-[25vw] flex items-center justify-center rounded-2xl overflow-hidden object-cover"
+              src="src/assets/AboutMe/Dance2.png"
+            />
+          </div>
+          <div className="rounded-4xl w-[25vw] h-[25vw]  font-mono">
+            <img
+              className="hover:border-2 border-amber-50 w-[25vw] h-[25vw] flex items-center justify-center rounded-2xl overflow-hidden object-cover"
+              src="src/assets/AboutMe/Triton.png"
+            />
+          </div>
         </div>
-        <p className="text-white text-[1.2vw] px-12 pb-12">
-          I’m a second-year Math-CS major at UCSD with a minor in Cognitive
-          Science (ML & Neuroscience), diving deep into the fascinating
-          intersections of logic, technology, and the brain.
-        </p>
       </div>
     </div>
   );

@@ -10,14 +10,9 @@ const Footer = () => {
     <div className="bg-[#748877] w-full flex justify-between p-4">
       <div className="flex justify-start flex-col gap-2 items-center text-sm font-medium">
         <span className="text-white flex gap-2">
-          Made with <FaHeart className="hover:cursor-pointer hover:rotate-2 hover:scale-120"/> by
-          <a
-            href="https://github.com/anagha166/Projects"
-            target="_blank"
-            className="hover:underline"
-          >
-            Anagha
-          </a>
+          Made with{" "}
+          <FaHeart className="mt-[0.2vw] hover:cursor-pointer hover:rotate-2 hover:scale-120" />{" "}
+          by Anagha
         </span>
       </div>
       <div className="size-xl text-2xl text-white flex justify-end gap-4 items-center font-medium">
@@ -35,7 +30,7 @@ const Footer = () => {
 
         <a href="https://github.com/anagha166" target="_blank" title="Github">
           <BsGithub className="hover:cursor-pointer hover:rotate-2 hover:scale-120" />
-        </a>  
+        </a>
 
         <a
           href="https://www.instagram.com/_anagha_/"
@@ -45,10 +40,13 @@ const Footer = () => {
           <BsInstagram className="hover:cursor-pointer hover:rotate-2 hover:scale-120" />
         </a>
 
-        <a href="https://www.devpost.com/anagha166" target="_blank" title="Art Account">
+        <a
+          href="https://www.devpost.com/anagha166"
+          target="_blank"
+          title="Art Account"
+        >
           <FaPaintBrush className="hover:cursor-pointer hover:rotate-2 hover:scale-120" />
         </a>
-
       </div>
     </div>
   );
