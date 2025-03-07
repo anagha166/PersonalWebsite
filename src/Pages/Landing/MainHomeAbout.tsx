@@ -33,8 +33,8 @@ const MainHomeAbout = ({
           technology, and our brains.
         </p>
         <p className="ml-8 pt-8 text-[1vw] w-[40vw] text-white ">
-          I like creating interactive projects that
-          both involve and intrigue my users.
+          I like creating interactive projects that both involve and intrigue my
+          users.
         </p>
         <Link to="/about">
           {" "}

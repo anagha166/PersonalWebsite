@@ -181,12 +181,13 @@ const MainHomeGallery = () => {
         transition={{ type: "tween", duration: 0.5 }} // Smooth transition
       >
         <p className="text-5xl text-white">+ projects</p>
-        <p className="pt-8 pr-10 text-[1vw] w-[32vw] text-white">
-          Come check out some of my projects, designs, and artwork, and enjoy
-          some relaxing music as you browse.
+        <p className="pt-8 pr-16 text-[1vw] w-[32vw] text-white">
+          Take a look at some of my projects, designs, and artwork, and enjoy
+          the visuals and videos along the way.
         </p>
-        <p className="pt-4 mr-8 text-[1vw] w-[32vw] text-white">
-          It wouldn’t be a museum experience without some ambiance, after all.
+        <p className="pt-4 pr-16 text-[1vw] w-[32vw] text-white">
+          From web development to 3D modeling and printing and modeling, each
+          project describes a bit of who I am. I hope you enjoy!
         </p>
         <Link to="/projects">
           {" "}

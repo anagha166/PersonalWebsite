@@ -14,11 +14,15 @@ const ContactMe = () => {
                   I'm always open to new opportunities and collaborations.
                   <p className="pt-4">
                     Whether you have a project in mind, are interested in a
-                    commission, or just want to chat, feel free to reach out!
+                    commission, or just want to chat, feel free to reach out.
                   </p>
                   <p className="pt-4">I would love to hear from you!</p>
                   <div className="flex flex-row">
-                    <img className="pt-12 w-[11vw] h-[11vw]" src={sigma} alt="" />
+                    <img
+                      className="pt-12 w-[11vw] h-[11vw]"
+                      src={sigma}
+                      alt=""
+                    />
                   </div>
                 </p>
               </div>
