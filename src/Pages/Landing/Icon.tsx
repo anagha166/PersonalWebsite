@@ -1,4 +1,5 @@
 import Eyes from "./Eyes";
+import icon from "/src/assets/Landing/My_Icon.png";
 
 const Icon = () => {
   return (
@@ -12,7 +13,7 @@ const Icon = () => {
 
         {/* Image */}
         <img
-          src="src/assets/Landing/My_Icon.png"
+          src={icon}
           alt="icon"
           className="w-full h-full object-contain z-10"
         />

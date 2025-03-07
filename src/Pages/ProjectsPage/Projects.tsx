@@ -7,6 +7,17 @@ import { FaReact } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa6";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaWordpress } from "react-icons/fa";
+import annu from "/src/assets/Projects/Annu.png";
+import ascend from "/src/assets/Projects/Ascendtials.png";
+import consulting from "/src/assets/Projects/Consulting.png";
+import ds3 from "/src/assets/Projects/DS3.png";
+import mirror from "/src/assets/Projects/Mirror.png";
+import greektragedy from "/src/assets/Projects/GreekTragedy.png";
+import lemur from "/src/assets/Projects/Lemur.png";
+import marvel from "/src/assets/Projects/Marvel.png";
+import pearlgirl from "/src/assets/Projects/PearlGirl.png";
+import wanda from "/src/assets/Projects/Wanda.png";
+
 
 const Projects = () => {
   const VideoLoop = (fileId: string) => {
@@ -320,17 +331,17 @@ const Projects = () => {
           <div className="grid grid-cols-3 gap-12">
             {project(
               "Website Redesign for local non-profit organization, ASCENDtials",
-              "src/assets/Projects/Ascendtials.png",
+              ascend,
               "photo"
             )}
             {project(
               "Main website redesign for UCSD's Data Science Student Society",
-              "src/assets/Projects/DS3.png",
+              ds3,
               "photo"
             )}
             {project(
               "Consulting website redesign for UCSD's Data Science Student Society",
-              "src/assets/Projects/Consulting.png",
+              consulting,
               "photo"
             )}
           </div>
@@ -360,7 +371,7 @@ const Projects = () => {
           <div className="grid grid-cols-3 gap-12">
             {project(
               "'Magic Mirror'for IEEE quarterly projects. Uses ChatGpt AI to compliment photograph",
-              "src/assets/Projects/Mirror.png",
+              mirror,
               "photo"
             )}
             {project(
@@ -375,22 +386,22 @@ const Projects = () => {
           <div className="grid grid-cols-3 gap-12">
             {project(
               "Family portrait - pencil sketch",
-              "src/assets/Projects/Annu.png",
+              annu,
               "photo"
             )}
             {project(
               "Portrait - pencil sketch",
-              "src/assets/Projects/GreekTragedy.png",
+              greektragedy,
               "photo"
             )}
             {project(
               "Lemur - pencil sketch",
-              "src/assets/Projects/Lemur.png",
+              lemur,
               "photo"
             )}
             {project(
               "Car designed for my younger brother, featuring his favorite superheroes",
-              "src/assets/Projects/Marvel.png",
+              marvel,
               "photo"
             )}
             {project(
@@ -400,12 +411,12 @@ const Projects = () => {
             )}
             {project(
               "Wandavision portrait, made with tempera and prismacolor pencils",
-              "src/assets/Projects/Wanda.png",
+              wanda,
               "photo"
             )}
             {project(
               "Portrait, made with oil paint",
-              "src/assets/Projects/PearlGirl.png",
+              pearlgirl,
               "photo"
             )}
             {project(

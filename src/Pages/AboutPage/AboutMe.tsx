@@ -1,8 +1,18 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import wave1 from "/src/assets/AboutMe/Wave1.png";
+import wave2 from "/src/assets/AboutMe/Wave2.png";
+import photoshoot from "/src/assets/AboutMe/Photoshoot.jpg";
+import windows from "/src/assets/AboutMe/Window.png";
+import newyawk from "/src/assets/AboutMe/NewYawk.png";
+import ruckus from "/src/assets/AboutMe/Ruckus.png";
+import workshop from "/src/assets/AboutMe/Workshop.png";
+import meandcat from "/src/assets/AboutMe/MeAndCat.png";
+import dance from "/src/assets/AboutMe/Dance2.png";
+import triton from "/src/assets/AboutMe/Triton.png";
 
 const AboutMe = () => {
-  const [img, setImg] = useState("src/assets/AboutMe/Wave2.png");
+  const [img, setImg] = useState(wave1);
   return (
     <div className="flex font-mono flex-col items-center justify-center min-h-screen">
       <div className="flex flex-row my-24">
@@ -24,8 +34,8 @@ const AboutMe = () => {
           {/* Wrapper to control positioning */}
           <motion.div
             className="relative w-[35vw] h-[35vw] flex justify-center items-center"
-            onHoverStart={() => setImg("src/assets/AboutMe/Wave1.png")}
-            onHoverEnd={() => setImg("src/assets/AboutMe/Wave2.png")}
+            onHoverStart={() => setImg(wave1)}
+            onHoverEnd={() => setImg(wave2)}
             transition={{ type: "tween", duration: 0.5 }}
             animate={img}
           >
@@ -61,7 +71,7 @@ const AboutMe = () => {
           <div className="rounded-4xl w-[30vw] h-[30vw] m-16 font-mono">
             <img
               className="w-[30vw] h-[30vw] flex items-center justify-center rounded-4xl overflow-hidden object-cover"
-              src="src/assets/AboutMe/Photoshoot.jpg"
+              src={photoshoot}
             />
           </div>
         </div>
@@ -72,7 +82,7 @@ const AboutMe = () => {
             <div className="rounded-4xl w-[30vw] h-[30vw] mx-16 font-mono">
               <img
                 className="w-[40vw] h-[30vw] flex items-center justify-center rounded-4xl overflow-hidden object-cover"
-                src="src/assets/AboutMe/Window.png"
+                src={windows}
               />
             </div>
             <div className="flex flex-col px-12 py-16 w-[50vw]">
@@ -96,19 +106,19 @@ const AboutMe = () => {
           <div className="rounded-4xl w-[25vw] h-[25vw] font-mono">
             <img
               className="hover:border-2 border-amber-50 w-[25vw] h-[25vw] flex items-center justify-center rounded-2xl overflow-hidden object-cover"
-              src="src/assets/AboutMe/NewYawk.png"
+              src={newyawk}
             />
           </div>
           <div className="rounded-4xl w-[25vw] h-[25vw]  font-mono">
             <img
               className="hover:border-2 border-amber-50 w-[25vw] h-[25vw] flex items-center justify-center rounded-2xl overflow-hidden object-cover"
-              src="src/assets/AboutMe/Ruckus.png"
+              src={ruckus}
             />
           </div>
           <div className="rounded-4xl w-[25vw] h-[25vw]  font-mono">
             <img
               className="w-[25vw] h-[25vw] hover:border-2 border-amber-50 flex items-center justify-center rounded-2xl overflow-hidden object-cover"
-              src="src/assets/AboutMe/Workshop.png"
+              src={workshop}
             />
           </div>
         </div>
@@ -116,19 +126,19 @@ const AboutMe = () => {
           <div className="rounded-4xl w-[25vw] h-[25vw]  font-mono">
             <img
               className="hover:border-2 border-amber-50 w-[25vw] h-[25vw] flex items-center justify-center rounded-2xl overflow-hidden object-cover"
-              src="src/assets/AboutMe/MeAndCat.png"
+              src={meandcat}
             />
           </div>
           <div className="rounded-4xl w-[25vw] h-[25vw]  font-mono">
             <img
               className="hover:border-2 border-amber-50 w-[25vw] h-[25vw] flex items-center justify-center rounded-2xl overflow-hidden object-cover"
-              src="src/assets/AboutMe/Dance2.png"
+              src={dance}
             />
           </div>
           <div className="rounded-4xl w-[25vw] h-[25vw]  font-mono">
             <img
               className="hover:border-2 border-amber-50 w-[25vw] h-[25vw] flex items-center justify-center rounded-2xl overflow-hidden object-cover"
-              src="src/assets/AboutMe/Triton.png"
+              src={triton}
             />
           </div>
         </div>
