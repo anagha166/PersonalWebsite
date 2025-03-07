@@ -94,8 +94,8 @@ const AboutMe = () => {
                 not working, I'm likely at practice for my dance team, Raas
                 Ruckus, preparing to travel the country competing in Raas-Garba
                 style dance. Outside of school, I love making memories with my
-                family and friends, playing games like Bopl Battle, and learning
-                new languages.
+                family and friends, playing games like Bopl Battle, and
+                exploring new places.
               </p>
             </div>
           </div>
