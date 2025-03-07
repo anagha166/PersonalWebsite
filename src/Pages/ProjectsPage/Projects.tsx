@@ -18,6 +18,7 @@ import marvel from "/src/assets/Projects/Marvel.png";
 import pearlgirl from "/src/assets/Projects/PearlGirl.png";
 import wanda from "/src/assets/Projects/Wanda.png";
 
+
 const Projects = () => {
   const VideoLoop = (fileId: string) => {
     const videoUrl = `https://drive.google.com/file/d/${fileId}/preview`;
@@ -33,13 +34,8 @@ const Projects = () => {
       </div>
     );
   };
-
-  const project = (
-    caption: string,
-    tools: string,
-    path: string,
-    type: string
-  ) => {
+  
+  const project = (caption: string, tools: string, path: string, type: string) => {
     return (
       <div className="flex flex-col items-left transform transition-transform hover:translate-y-[-5px] hover:shadow-gray-900">
         {type === "video" ? (
@@ -50,13 +46,12 @@ const Projects = () => {
             src={path}
           />
         )}
-        <p className="text-[0.8vw] text-white mt-2 px-2 text-left">{caption}</p>
-        <p className="text-[0.8vw] text-white mt-2 px-2 text-left">
-          Tools: {tools}
-        </p>
+        <p className="text-[0.8vw] text-white mt-2 pt-2 text-left">{caption}</p>
+        <p className="text-[0.8vw] text-white mt-2 pb-2 text-left">Tools: {tools}</p>
       </div>
     );
   };
+  
 
   return (
     <div>
@@ -338,7 +333,7 @@ const Projects = () => {
             {project(
               "Website Redesign for local non-profit organization, ASCENDtials",
               "Figma, WordPress, HTML, CSS, JS",
-              ascend,
+              ascend, 
               "photo"
             )}
             {project(
@@ -398,14 +393,24 @@ const Projects = () => {
         <div className="flex flex-col gap-4 py-12">
           <h1 className="text-4xl leading-[8vh]">./2d art and design</h1>
           <div className="grid grid-cols-3 gap-12">
-            {project("Family portrait", "Graphite", annu, "photo")}
+            {project(
+              "Family portrait",
+              "Graphite",
+              annu,
+              "photo"
+            )}
             {project(
               "Portrait from reference",
               "Graphite",
               greektragedy,
               "photo"
             )}
-            {project("Lemur - pencil sketch", "Graphite", lemur, "photo")}
+            {project(
+              "Lemur - pencil sketch",
+              "Graphite",
+              lemur,
+              "photo"
+            )}
             {project(
               "Car designed for my younger brother, featuring his favorite superheroes",
               "Acrylic on wood",
