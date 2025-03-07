@@ -16,7 +16,8 @@ const Footer = () => {
         </span>
       </div>
       <div className="size-xl text-2xl text-white flex justify-end gap-4 items-center font-medium">
-        <a title="Gmail">
+        <a title="Gmail" href="mailto:anagha.kamath@gmail.com"
+          target="_blank">
           <SiGmail className="hover:cursor-pointer hover:rotate-2 hover:scale-120" />
         </a>
 
