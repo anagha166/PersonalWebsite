@@ -180,7 +180,7 @@ const MainHomeGallery = () => {
         whileHover={{ x: -30 }} // Moves right on hover
         transition={{ type: "tween", duration: 0.5 }} // Smooth transition
       >
-        <p className="text-5xl text-white">+ projects</p>
+        <p className="text-[3.1vw] text-white">+ projects</p>
         <p className="pt-8 pr-16 text-[1vw] w-[32vw] text-white">
           Take a look at some of my projects, designs, and artwork, and enjoy
           the visuals and videos along the way.
