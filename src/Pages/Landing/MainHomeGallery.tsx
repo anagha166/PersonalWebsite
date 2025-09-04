@@ -6,20 +6,21 @@ const MainHomeGallery = () => {
   const [gap, setGap] = useState("60vw");
   return (
     <motion.div
-      className="my-24 w-full flex justify-end gap-[40vw] overflow-hidden"
+      className="my-12 md:my-24 w-full flex flex-col lg:flex-row justify-end gap-8 lg:gap-[40vw] overflow-hidden px-4 md:px-8 lg:px-16"
       style={{ gap }}
       onHoverStart={() => setGap("5vw")} // Shrinks gap on hover
       onHoverEnd={() => setGap("60vw")} // Resets gap after hover
       animate={{ gap }} // Smooth transition of gap
       transition={{ type: "tween", duration: 0.5 }}
     >
-      <div className="flex justify-end">
+      <div className="flex justify-center md:justify-end">
         <svg
-          width="1291"
-          height="374"
+          width="100%"
+          height="auto"
           viewBox="0 0 1291 374"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="w-full md:w-auto"
         >
           <path
             d="M786.164 252.63C786.164 262.087 793.149 270.79 797.632 278.636C804.693 290.992 811.029 303.52 817.441 316.226C823.623 328.477 831.874 341.801 836.207 354.8"
@@ -176,22 +177,21 @@ const MainHomeGallery = () => {
         </svg>
       </div>
       <motion.div
-        className="font-mono leading-[2.5vh] rounded-l-full mb-32 -mr-12 w-[50vw] h-[30vw] text-align-right justify-right items-center text-3xl bg-[#748877] pl-32 pt-24"
+        className="font-mono leading-normal md:leading-[2.5vh] rounded-l-full mb-8 md:mb-32 -mr-0 md:-mr-12 w-full md:w-[50vw] h-auto md:h-[30vw] text-center md:text-left justify-center md:justify-right items-center text-lg md:text-xl lg:text-3xl bg-[#748877] p-6 md:p-8 lg:pl-32 lg:pt-24"
         whileHover={{ x: -30 }} // Moves right on hover
         transition={{ type: "tween", duration: 0.5 }} // Smooth transition
       >
-        <p className="text-[3.1vw] text-white">+ projects</p>
-        <p className="pt-8 pr-16 text-[1vw] w-[32vw] text-white">
+        <p className="text-2xl md:text-3xl lg:text-4xl xl:text-[3.1vw] text-white">+ projects</p>
+        <p className="pt-4 md:pt-8 pr-0 md:pr-16 text-sm md:text-base lg:text-lg xl:text-[1vw] w-full md:w-[32vw] text-white">
           Take a look at some of my projects, designs, and artwork, and enjoy
           the visuals and videos along the way.
         </p>
-        <p className="pt-4 pr-16 text-[1vw] w-[32vw] text-white">
+        <p className="pt-4 pr-0 md:pr-16 text-sm md:text-base lg:text-lg xl:text-[1vw] w-full md:w-[32vw] text-white">
           From web development to 3D printing and modeling, each
           project describes a bit of who I am. I hope you enjoy!
         </p>
         <Link to="/projects">
-          {" "}
-          <button className="transform transition-transform hover:translate-y-[5px] shadow-lg ml-8 text-[1vw] border-2 border-amber-50 rounded-full px-4 py-2 text-white mt-8 mr-24">
+          <button className="transform transition-transform hover:translate-y-[5px] shadow-lg mt-4 md:mt-8 text-sm md:text-base lg:text-lg xl:text-[1vw] border-2 border-amber-50 rounded-full px-4 py-2 text-white">
             explore
           </button>
         </Link>

@@ -56,12 +56,12 @@ const Hero = ({
 
   return (
     <div className="bg-[#748877] font-mono">
-      <div className="min-h-screen w-screen flex gap-[0.1vw] justify-center items-center">
+      <div className="min-h-screen w-screen flex flex-col md:flex-row gap-[0.1vw] justify-center items-center px-4 md:px-0">
         <Icon />
         {/* Text with improved size and spacing */}
-        <div className="flex-1 text-white text-left hero-text-shadow flex flex-col items-start mt-4 pr-12">
-          <h1 className="text-[3.5vw]">Hi! I'm Anagha Kamath</h1>
-          <p className="text-[1.2vw] w-[40vw] pt-4 mr-10">
+        <div className="flex-1 text-white text-center md:text-left hero-text-shadow flex flex-col items-center md:items-start mt-4 md:pr-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3.5vw]">Hi! I'm Anagha Kamath</h1>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[1.2vw] w-full md:w-[40vw] pt-4 md:mr-10">
             <TypingText text={currentStatement} delay={30} />
           </p>
         </div>
@@ -84,8 +84,7 @@ const Hero = ({
             }}
           >
             <button className="hover:cursor-pointer" onClick={handleScroll}>
-              <FaLeaf className="flex justify-center rotate-[110deg] mx-auto items-center text-4xl text-[#3d5640]" />
-              <p className="text-white text-xs pt-2">click me!</p>
+              <FaLeaf className="flex justify-center rotate-[110deg] mx-auto items-center text-4xl text-[#748877]" />
             </button>
           </motion.div>
         )}

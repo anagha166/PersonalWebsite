@@ -10,9 +10,6 @@ const Landing = () => {
   return (
     <Page>
       <Hero AboutMeRef={aboutMeRef}/>
-      <MainHomeAbout AboutMeRef={aboutMeRef} />
-      <MainHomeGallery />
-      <ContactMe />
     </Page>
   );
 };

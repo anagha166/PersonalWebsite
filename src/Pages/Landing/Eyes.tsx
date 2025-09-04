@@ -53,10 +53,10 @@ const Eyes = () => {
   return (
     <div
       ref={eyeContainer}
-      className="flex gap-[4.2vw] justify-center items-center w-full"
+      className="flex gap-[7vw] md:gap-[4.2vw] justify-center items-center w-full"
     >
-      <div className="eye w-[1vw] h-[1.2vw] rounded-full bg-black" />
-      <div className="eye w-[1vw] h-[1.2vw] rounded-full bg-black" />
+      <div className="eye  w-[2vw] h-[2.75vw] sm:w-[2vw] sm:h-[2.75vw] md:w-[1vw] md:h-[1.25vw] lg:w-[1vw] lg:h-[1.2vw] rounded-full bg-black" />
+      <div className="eye  w-[2vw] h-[2.75vw] sm:w-[2vw] sm:h-[2.75vw] md:w-[1vw] md:h-[1.25vw] lg:w-[1vw] lg:h-[1.2vw] rounded-full bg-black" />
     </div>
   );
 };

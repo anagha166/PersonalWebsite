@@ -12,46 +12,46 @@ const MainHomeAbout = ({
   return (
     <motion.div
       ref={AboutMeRef}
-      className="mt-24 w-full flex overflow-hidden"
+      className="mt-[5vh] w-full flex flex-col md:flex-row overflow-hidden"
       style={{ gap }}
-      onHoverStart={() => setGap("20vw")} // Shrinks gap on hover
+      onHoverStart={() => setGap("10vw")} // Shrinks gap on hover
       onHoverEnd={() => setGap("60vw")} // Resets gap after hover
       animate={{ gap }} // Smooth transition of gap
       transition={{ type: "tween", duration: 0.5 }} // Smooth transition effect
     >
       <motion.div
-        className="font-mono leading-[2.5vh] rounded-r-full my-40 -ml-12 w-[50vw] h-[30vw] text-align-left justify-start items-center text-3xl bg-[#748877] px-8 pt-20"
+        className="font-mono leading-normal md:leading-[2.5vh] rounded-r-full my-8 md:my-[10vh] -ml-0 md:-ml-[3vw] w-full md:w-[50vw] text-center md:text-left justify-center md:justify-start items-center bg-[#748877] p-8 md:px-[3vw] md:py-[6vw]"
         whileHover={{
-          x: 30, // Moves left when hovered on
+          x: "2vw", // Moves left when hovered on
         }}
         transition={{ type: "tween", duration: 0.5 }}
       >
-        <p className="ml-8 text-5xl text-white">+ about me</p>
-        <p className="ml-8 pt-8 text-[1vw] w-[40vw] text-white ">
+        <p className="text-4xl md:text-[3.5vw] text-white">+ about me</p>
+        <p className="pt-4 md:pt-[3vw] text-base md:text-[1vw] w-full md:w-[40vw] text-white">
           I'm a second-year Math-CS major at UCSD with a minor in Cognitive
           Science, diving deep into the fascinating intersections of design,
           technology, and the human brain.
         </p>
-        <p className="ml-8 pt-8 text-[1vw] w-[40vw] text-white ">
+        <p className="pt-4 md:pt-[1vw] text-base md:text-[1vw] w-full md:w-[40vw] text-white">
           I like creating interactive projects that both involve and intrigue my
           users.
         </p>
         <Link to="/about">
-          {" "}
-          <button className="transform transition-transform hover:translate-y-[5px] shadow-lg ml-8 text-[1vw] border-2 border-amber-50 rounded-full px-4 py-2 text-white mt-8 mr-24">
+          <button className="transform transition-transform hover:translate-y-[0.5vh] shadow-lg mt-4 md:mt-[2vw] text-base md:text-[1vw] border-2 border-amber-50 rounded-full px-4 py-2 text-white">
             learn more
           </button>
         </Link>
       </motion.div>
 
       {/* Right div that will move on hover */}
-      <div className="flex justify-end mt-50">
+      <div className="flex justify-center md:justify-end mt-8 md:mt-[10vh]">
         <svg
-          width="700"
-          height="500"
+          width="100%"
+          height="auto"
           viewBox="0 0 769 561"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="w-full md:w-[90vw] h-auto md:h-[60vh]"
         >
           <path
             d="M17.1831 322.043C-5.51751 301.508 -4.60267 265.579 19.1136 246.225L31.6878 235.964C34.944 233.307 38.5224 231.071 42.3381 229.309L98.817 203.228C111.237 197.493 125.464 197.097 138.183 202.132L223.924 236.074C241.026 242.844 252.969 258.531 254.945 276.817V276.817C257.247 298.117 245.597 318.484 226.07 327.298L139.757 366.254C127.063 371.983 112.554 372.158 99.7255 366.737L45.3399 343.754C40.1767 341.572 35.417 338.538 31.2602 334.777L17.1831 322.043Z"

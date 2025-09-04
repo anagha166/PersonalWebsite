@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="fixed top-0 z-100 p-2 flex justify-center items-center w-full text-white font-mono">
+    <div className="fixed top-0 z-50 p-2 flex justify-center items-center w-full text-white font-mono">
       <div className="flex justify-between w-full p-2 rounded-xl">
         <Link to="/">
           <svg
-            className="transform hover:scale-125 duration-200 ease-in-out"
-            width="3vw"
-            height="3vw"
+            className="transform hover:scale-125 duration-200 ease-in-out w-12 h-12 md:w-[3vw] md:h-[3vw]"
             viewBox="0 0 55 58"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +25,17 @@ const Navbar = () => {
             />
           </svg>
         </Link>
-        <div className="flex items-center flex-row gap-5 justify-between">
+        
+        {/* Mobile menu button */}
+        <button 
+          className="md:hidden text-white text-2xl"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        {/* Desktop menu */}
+        <div className="hidden md:flex items-center flex-row gap-5 justify-between">
           <Link
             className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e]"
             to="/about"
@@ -49,6 +61,40 @@ const Navbar = () => {
             contact
           </Link>
         </div>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="absolute top-16 right-0 w-full bg-[#748877] md:hidden flex flex-col items-center gap-4 py-4">
+            <Link
+              className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e] w-32 text-center"
+              to="/about"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              about
+            </Link>
+            <Link
+              className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e] w-32 text-center"
+              to="/projects"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              projects
+            </Link>
+            <Link
+              className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e] w-32 text-center"
+              to="/resume"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              resume
+            </Link>
+            <Link
+              className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e] w-32 text-center"
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              contact
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
