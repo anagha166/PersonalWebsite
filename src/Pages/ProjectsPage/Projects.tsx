@@ -20,7 +20,6 @@ import pearlgirl from "/src/assets/Projects/PearlGirl.png";
 import wanda from "/src/assets/Projects/Wanda.png";
 import lizard from "/src/assets/Projects/Lizard.svg";
 import yipyap from "/src/assets/Projects/Yipyap.png";
-import comp from "/src/assets/Projects/Comp.png";
 import ProjectModal from "../../Components/ProjectModal";
 import { projectsData, ProjectData } from "../../Utils/projectData";
 
@@ -41,25 +40,9 @@ const Projects = () => {
     setSelectedProject(null);
   };
 
-  const VideoLoop = (fileId: string) => {
-    const videoUrl = `https://drive.google.com/file/d/${fileId}/preview`;
-    return (
-      <div className="w-full aspect-square border-2 flex items-center justify-center rounded-lg overflow-hidden shadow-md">
-        <iframe
-          src={videoUrl}
-          width="100%"
-          height="100%"
-          allow="autoplay"
-          title="Google Drive Video"
-          className="rounded-lg"
-        ></iframe>
-      </div>
-    );
-  };
 
   const project = (
     caption: string,
-    tools: string,
     path: string,
     type: string,
     projectId?: string,
@@ -137,7 +120,6 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-12">
             {project(
               "Website Redesign for local non-profit organization, ASCENDtials",
-              "Figma, WordPress, HTML, CSS, JS",
               ascend,
               "photo",
               "ascendtials",
@@ -145,7 +127,6 @@ const Projects = () => {
             )}
             {project(
               "Main website redesign for UCSD's Data Science Student Society",
-              "Figma, React, TypeScript, TailwindCSS, HTML, CSS, JS",
               ds3,
               "photo",
               "ds3",
@@ -153,7 +134,6 @@ const Projects = () => {
             )}
             {project(
               "Consulting website redesign for UCSD's Data Science Student Society",
-              "Figma, React, TypeScript, TailwindCSS, HTML, CSS, JS",
               consulting,
               "photo",
               "consulting",
@@ -161,7 +141,6 @@ const Projects = () => {
             )}
             {project(
               "'YipYap' - Preliminary designs for a joint project to create a chat app designed for chatty people",
-              "Figma",
               yipyap,
               "photo",
               "yipyap",
@@ -174,19 +153,16 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">
             {project(
               "Blue car with glowing headlights and tinted windows",
-              "Blender",
               "1sOA-_QFZFkpbGOEOtuwEAWA38iR4Ix9g",
               "video"
             )}
             {project(
               "Winter Scene",
-              "Blender",
               "18aq7hg7TeZZ6sfiAg56FdL3J-bwkjS8W",
               "video"
             )}
             {project(
               "Preliminary model of a donut with sprinkles",
-              "Blender",
               "1yD8b8MLdYxxpAwOsmEdku4q7WXXrmU-w",
               "video"
             )}
@@ -197,14 +173,12 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">
             {project(
               "'Magic Mirror'for IEEE quarterly projects that compliments based on appearance",
-              "Lazer cutting, calls to ChatGPT API",
               mirror,
               "photo",
               "magic-mirror"
             )}
             {project(
               "Self playing guitar made with my team for IEEE quarterly projects, using arduinos and a 3D printed stand",
-              "Lazer cutting, CAD, 3D Printing, Arduino",
               "1aG2AoE3aque1Vt77wHr2rR48--pKkqy4",
               "video",
               "self-playing-guitar"
@@ -214,41 +188,35 @@ const Projects = () => {
         <div className="flex flex-col gap-4 py-8 lg:py-12">
           <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./2d art and design</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">
-            {project("Family portrait", "Graphite", annu, "photo")}
+            {project("Family portrait", annu, "photo")}
             {project(
               "Portrait from reference",
-              "Graphite",
               greektragedy,
               "photo"
             )}
-            {project("Lemur - pencil sketch", "Graphite", lemur, "photo")}
+            {project("Lemur - pencil sketch", lemur, "photo")}
             {project(
               "Car designed for my younger brother, featuring his favorite superheroes",
-              "Acrylic on wood",
               marvel,
               "photo"
             )}
             {project(
               "Mona Lisa recreation, complete with frame",
-              "Prismacolor pencils",
               "13ngqzH-4pSXEm8JskU_xrJQKl0RXgtTj",
               "video"
             )}
             {project(
               "Wandavision portrait",
-              "Tempera paint, prismacolor pencils",
               wanda,
               "photo"
             )}
             {project(
               "My current labor of love",
-              "Oil paint on canvas",
               pearlgirl,
               "photo"
             )}
             {project(
               "Bat animation for a game design",
-              "Pixilart",
               "15RpkvNoiJVODTbsSaz1qtwtKhZQXG2L8",
               "video"
             )}
