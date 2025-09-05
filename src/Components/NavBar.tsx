@@ -48,12 +48,14 @@ const Navbar = () => {
           >
             projects
           </Link>
-          <Link
+          <a
             className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e]"
-            to="/resume"
+            href="https://drive.google.com/file/d/1nIMVGwJsbV6IJbz2ReZxPPWoSmZ4qR3A/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             resume
-          </Link>
+          </a>
           <Link
             className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e]"
             to="/contact"
@@ -64,7 +66,7 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="absolute top-16 right-0 w-full bg-[#748877] md:hidden flex flex-col items-center gap-4 py-4">
+          <div className="mt-4 absolute top-16 right-0 w-full border-amber-50 border-2 bg-[#748877] md:hidden flex flex-col items-center gap-4 py-4">
             <Link
               className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e] w-32 text-center"
               to="/about"
@@ -79,13 +81,15 @@ const Navbar = () => {
             >
               projects
             </Link>
-            <Link
+            <a
               className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e] w-32 text-center"
-              to="/resume"
+              href="https://drive.google.com/file/d/1nIMVGwJsbV6IJbz2ReZxPPWoSmZ4qR3A/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
             >
               resume
-            </Link>
+            </a>
             <Link
               className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e] w-32 text-center"
               to="/contact"

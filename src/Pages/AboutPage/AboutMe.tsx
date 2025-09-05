@@ -15,7 +15,7 @@ const AboutMe = () => {
   return (
     <div className="flex font-mono flex-col items-center justify-center min-h-screen px-4 md:px-8 lg:px-16">
       <div className="flex flex-col lg:flex-row my-12 lg:my-28 gap-8 lg:gap-16 w-full max-w-7xl">
-        <div className="bg-[#748877] w-full lg:w-[40vw] lg:h-[40vw] rounded-4xl p-8 md:p-12 lg:p-22 font-mono">
+        <div className="bg-[#748877] w-full lg:w-[40vw] lg:h-[40vw] rounded-4xl md:p-12 lg:p-15 font-mono">
           <h1 className="text-2xl md:text-2xl lg:text-3xl text-white">cd about-me</h1>
           <p className="text-white text-sm md:text-base lg:text-lg pt-12 lg:pt-12">
             Hi! I'm a full-stack developer with a passion for problem-solving

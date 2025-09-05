@@ -82,8 +82,8 @@ const Projects = () => {
   };
 
   return (
-    <div className="px-4 md:px-4 lg:px-16">
-      <div className="bg-[#748877] text-white font-mono w-full max-w-6xl mx-auto my-8 md:my-16 lg:my-16 rounded-4xl p-6 md:p-8 lg:p-12  flex-col justify-center">
+    <div className="mt-15 px-4 md:px-4 lg:px-16">
+      <div className="bg-[#748877] text-white font-mono w-full max-w-6xl mx-auto my-8 md:my-16 lg:my-10 rounded-4xl p-6 md:p-8 lg:p-12  flex-col justify-center">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-20">
           <h1 className="text-3xl md:text-2xl lg:text-3xl text-center lg:text-left">cd my-projects</h1>
           <div className="text-sm md:text-base lg:text-lg mt-4 lg:mt-8 w-full lg:w-[45vw] pt-4">

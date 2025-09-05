@@ -10,9 +10,9 @@ const Footer = () => {
     <div className="bg-[#748877] w-full flex justify-between p-4">
       <div className="flex justify-start flex-col gap-2 items-center text-sm font-medium">
         <span className="text-white flex gap-2">
-          Made with{" "}
-          <FaHeart className="mt-[0.2vw] hover:cursor-pointer hover:rotate-2 hover:scale-120" />{" "}
-          by Anagha
+          <span className="hidden sm:inline">Made with </span>
+          <FaHeart className="mt-[0.2vw] l hover:cursor-pointer hover:rotate-2 hover:scale-120" />
+          <span className="hidden sm:inline"> by Anagha</span>
         </span>
       </div>
       <div className="size-xl text-2xl text-white flex justify-end gap-4 items-center font-medium">
