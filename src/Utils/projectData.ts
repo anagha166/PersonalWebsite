@@ -15,32 +15,6 @@ export interface ProjectData {
 
 export const projectsData: ProjectData[] = [
   {
-    id: "ascendtials",
-    title: "ASCENDtials Website Redesign",
-    description: "Website Redesign for local non-profit organization, ASCENDtials",
-    longDescription: "A comprehensive website redesign for ASCENDtials, a local non-profit organization focused on empowering underserved communities. The project involved complete UI/UX overhaul, content restructuring, and implementation of modern web technologies to improve user engagement and accessibility.",
-    tools: ["Figma", "WordPress", "HTML", "CSS", "JavaScript", "PHP"],
-    inspiration: "The inspiration came from the organization's mission to uplift communities. I wanted to create a website that felt welcoming, trustworthy, and easy to navigate for people of all backgrounds and technical abilities.",
-    challenges: [
-      "Working with WordPress constraints while maintaining modern design standards",
-      "Ensuring accessibility compliance for diverse user base",
-      "Optimizing for mobile devices with limited resources",
-      "Balancing aesthetic appeal with functional requirements"
-    ],
-    process: [
-      "Created wireframes and mockups in Figma",
-      "Performed accessibility testing and optimization",
-      "Conducted user testing and feedback integration"
-    ],
-    images: [
-      "/src/assets/Projects/Ascendtials.png",
-      "/src/assets/Projects/Ascendtials.png"
-    ],
-    githubUrl: "https://github.com/anagha166/ascendtials-website",
-    liveUrl: "https://ascendtials.org",
-    category: "Website Development"
-  },
-  {
     id: "ds3",
     title: "UCSD Data Science Student Society",
     description: "Main website redesign for UCSD's Data Science Student Society",
@@ -90,12 +64,64 @@ export const projectsData: ProjectData[] = [
     category: "Website Development"
   },
   {
+    id: "ascendtials",
+    title: "ASCENDtials Website Redesign",
+    description: "Website Redesign for local non-profit organization, ASCENDtials",
+    longDescription: "A comprehensive website redesign for ASCENDtials, a local non-profit organization focused on empowering underserved communities. The project involved complete UI/UX overhaul, content restructuring, and implementation of modern web technologies to improve user engagement and accessibility.",
+    tools: ["Figma", "WordPress", "HTML", "CSS", "JavaScript", "PHP"],
+    inspiration: "The inspiration came from the organization's mission to uplift communities. I wanted to create a website that felt welcoming, trustworthy, and easy to navigate for people of all backgrounds and technical abilities.",
+    challenges: [
+      "Working with WordPress constraints while maintaining modern design standards",
+      "Ensuring accessibility compliance for diverse user base",
+      "Optimizing for mobile devices with limited resources",
+      "Balancing aesthetic appeal with functional requirements"
+    ],
+    process: [
+      "Created wireframes and mockups in Figma",
+      "Performed accessibility testing and optimization",
+      "Conducted user testing and feedback integration"
+    ],
+    images: [
+      "/src/assets/Projects/Ascendtials.png",
+      "/src/assets/Projects/Ascendtials.png"
+    ],
+    githubUrl: "https://github.com/anagha166/ascendtials-website",
+    liveUrl: "https://ascendtials.org",
+    category: "Website Development"
+  },
+  {
+    id: "WIC",
+    title: "ASCENDtials Website Redesign",
+    description: "Website Redesign for local non-profit organization, ASCENDtials",
+    longDescription: "A comprehensive website redesign for ASCENDtials, a local non-profit organization focused on empowering underserved communities. The project involved complete UI/UX overhaul, content restructuring, and implementation of modern web technologies to improve user engagement and accessibility.",
+    tools: ["Figma", "WordPress", "HTML", "CSS", "JavaScript", "PHP"],
+    inspiration: "The inspiration came from the organization's mission to uplift communities. I wanted to create a website that felt welcoming, trustworthy, and easy to navigate for people of all backgrounds and technical abilities.",
+    challenges: [
+      "Working with WordPress constraints while maintaining modern design standards",
+      "Ensuring accessibility compliance for diverse user base",
+      "Optimizing for mobile devices with limited resources",
+      "Balancing aesthetic appeal with functional requirements"
+    ],
+    process: [
+      "Created wireframes and mockups in Figma",
+      "Performed accessibility testing and optimization",
+      "Conducted user testing and feedback integration"
+    ],
+    images: [
+      "/src/assets/Projects/Ascendtials.png",
+      "/src/assets/Projects/Ascendtials.png"
+    ],
+    githubUrl: "https://github.com/anagha166/ascendtials-website",
+    liveUrl: "https://ascendtials.org",
+    category: "Website Development"
+  },
+  {
     id: "yipyap",
     title: "YipYap Chat App",
     description: "'YipYap' - Preliminary designs for a joint project to create a chat app designed for chatty people. My role was to lead the initial design and user experience research.",
     longDescription: "YipYap is a conceptual chat application designed specifically for people who love to chat. The app features unique UI elements that encourage conversation, including animated typing indicators, conversation starters, and gamified chat features. This project focused on the initial design and user experience research.",
     tools: ["Figma", "User Research", "Prototyping"],
-    inspiration: "The idea came from my boyfriend and I discussing the need for a chat app designed to keep people engaged in conversation, or to put it informally, to let them yap",
+    inspiration: "The idea came from my friend and I discussing the need for a chat app designed to keep people engaged in conversation, or to put it informally, to let them yap",
     challenges: [
       "Brainstorming engaging UI elements that encourage conversation",
       "Balancing fun features with usability",
@@ -161,6 +187,33 @@ export const projectsData: ProjectData[] = [
       "/src/assets/Projects/Mirror.png"
     ],
     category: "Hardware"
+  },
+  {
+    id: "task-tracker-app",
+    title: "TaskTracker Mobile App",
+    description: "A productivity mobile app for task management with gamification elements",
+    longDescription: "TaskTracker is a mobile application designed to help users manage their daily tasks through an intuitive interface combined with gamification elements. The app features task categorization, progress tracking, achievement badges, and social sharing capabilities to make productivity fun and engaging.",
+    tools: ["React Native", "JavaScript", "Firebase", "Figma", "Expo"],
+    inspiration: "I wanted to create a task management app that would actually motivate people to complete their tasks by making productivity feel like a game. The inspiration came from seeing how many people struggle with traditional to-do apps that feel boring and uninspiring.",
+    challenges: [
+      "Designing an intuitive mobile interface for task management",
+      "Implementing gamification features without overwhelming the core functionality",
+      "Creating a smooth user experience across different screen sizes",
+      "Integrating real-time data synchronization with Firebase"
+    ],
+    process: [
+      "Conducted user research on task management app preferences",
+      "Created wireframes and prototypes in Figma",
+      "Developed the app using React Native and Expo",
+      "Implemented Firebase for backend services and data storage",
+      "Conducted user testing and iterated based on feedback"
+    ],
+    images: [
+      "/src/assets/Projects/TaskTracker.png",
+      "/src/assets/Projects/TaskTracker.png"
+    ],
+    githubUrl: "https://github.com/anagha166/task-tracker-app",
+    category: "App Development"
   }
 ];
 

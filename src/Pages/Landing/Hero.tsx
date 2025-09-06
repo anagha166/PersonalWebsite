@@ -55,7 +55,7 @@ const Hero = ({
   }, []);
 
   return (
-    <div className="bg-[#748877] font-mono">
+    <div className="bg-[#3D4B3F] font-mono">
       <div className="min-h-screen w-screen flex flex-col md:flex-row gap-[0.1vw] justify-center items-center px-4 md:px-0">
         <Icon />
         {/* Text with improved size and spacing */}
@@ -66,29 +66,7 @@ const Hero = ({
           </p>
         </div>
       </div>
-      <AnimatePresence>
-        {showArrow && (
-          <motion.div
-            className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{
-              opacity: 1,
-              y: [0, -20, 0], // Creates a bounce effect
-            }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{
-              duration: 1, // Adjust speed of bounce
-              repeat: Infinity, // Infinite loop
-              repeatType: "reverse", // Makes it go up and down smoothly
-              ease: "easeInOut",
-            }}
-          >
-            <button className="hover:cursor-pointer" onClick={handleScroll}>
-              <FaLeaf className="flex justify-center rotate-[110deg] mx-auto items-center text-4xl text-[#748877]" />
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      
     </div>
   );
 };

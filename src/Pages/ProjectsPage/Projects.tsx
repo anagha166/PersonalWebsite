@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { IoLogoFigma } from "react-icons/io5";
 import { FaJava } from "react-icons/fa";
 import { FaPython } from "react-icons/fa";
@@ -20,12 +20,17 @@ import pearlgirl from "/src/assets/Projects/PearlGirl.png";
 import wanda from "/src/assets/Projects/Wanda.png";
 import lizard from "/src/assets/Projects/Lizard.svg";
 import yipyap from "/src/assets/Projects/Yipyap.png";
+import study from "/src/assets/Projects/Study.png";
+import starless from "/src/assets/Projects/Starless.png";
+import bite from "/src/assets/Projects/BiteFresh.png";
 import ProjectModal from "../../Components/ProjectModal";
 import { projectsData, ProjectData } from "../../Utils/projectData";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [visibleItems, setVisibleItems] = useState<Set<string>>(new Set());
+  const itemRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
   const openModal = (projectId: string) => {
     const project = projectsData.find(p => p.id === projectId);
@@ -40,24 +45,66 @@ const Projects = () => {
     setSelectedProject(null);
   };
 
+  // Intersection Observer for fade-in animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const itemId = entry.target.getAttribute('data-item-id');
+            if (itemId) {
+              setVisibleItems(prev => new Set([...prev, itemId]));
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    // Observe all project items
+    itemRefs.current.forEach((element) => {
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
 
   const project = (
     caption: string,
     path: string,
     type: string,
     projectId?: string,
-    category?: string
+    category?: string,
+    itemId?: string
   ) => {
     // Determine if this is a website development project
     const isWebsiteProject = category === "website development";
+    const isAppProject = category === "app development";
+    const isVisible = itemId ? visibleItems.has(itemId) : false;
     
     return (
       <div 
-        className="flex flex-col items-left transform transition-transform hover:translate-y-[-5px] hover:shadow-gray-900 cursor-pointer"
+        ref={(el) => {
+          if (el && itemId) {
+            itemRefs.current.set(itemId, el);
+          }
+        }}
+        data-item-id={itemId}
+        className={`flex flex-col items-left transform transition-all duration-700 ease-out hover:translate-y-[-5px] hover:shadow-gray-900 cursor-pointer ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
         onClick={() => projectId && openModal(projectId)}
       >
         {type === "video" ? (
-          <div className={`w-full ${isWebsiteProject ? 'aspect-[4/3]' : 'aspect-square'} border-2 flex items-center justify-center rounded-lg overflow-hidden shadow-md`}>
+          <div className={`w-full ${isWebsiteProject ? 'aspect-[4/3]' : isAppProject ? 'aspect-[3/4]' : 'aspect-square'} border-2 flex items-center justify-center rounded-lg overflow-hidden shadow-md`}>
             <iframe
               src={`https://drive.google.com/file/d/${path}/preview`}
               width="100%"
@@ -69,7 +116,7 @@ const Projects = () => {
           </div>
         ) : (
           <img
-            className={`w-full ${isWebsiteProject ? 'aspect-[13/8]' : 'aspect-square'} border-2 flex items-center justify-center rounded-lg overflow-hidden shadow-md object-cover`}
+            className={`w-full ${isWebsiteProject ? 'aspect-[13/8]' : isAppProject ? ' h-autoaspect-[8/13]' : 'aspect-square'} border-2 flex items-center justify-center rounded-lg overflow-hidden shadow-md object-cover`}
             src={path}
           />
         )}
@@ -119,32 +166,65 @@ const Projects = () => {
           <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./website development</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-12">
             {project(
-              "Website Redesign for local non-profit organization, ASCENDtials",
-              ascend,
-              "photo",
-              "ascendtials",
-              "website development"
-            )}
-            {project(
               "Main website redesign for UCSD's Data Science Student Society",
               ds3,
               "photo",
               "ds3",
-              "website development"
+              "website development",
+              "ds3-web"
             )}
             {project(
               "Consulting website redesign for UCSD's Data Science Student Society",
               consulting,
               "photo",
               "consulting",
-              "website development"
+              "website development",
+              "consulting-web"
             )}
             {project(
-              "'YipYap' - Preliminary designs for a joint project to create a chat app designed for chatty people",
+              "Website Redesign for ASCENDtials",
+              ascend,
+              "photo",
+              "ascendtials",
+              "website development",
+              "ascendtials-web"
+            )}
+            {project(
+              "StudyBuddy",
+              study,
+              "photo",
+              "yipyap",
+              "website development",
+              "yipyap-web"
+            )}
+            {project(
+              "A Starless Sky",
+              starless,
+              "photo",
+              "yipyap",
+              "website development",
+              "yipyap-web"
+            )}
+            {project(
+              "YipYap",
               yipyap,
               "photo",
               "yipyap",
-              "website development"
+              "website development",
+              "yipyap-web"
+            )}
+          </div>
+        </div>
+        <div className="flex flex-col gap-4 py-8 lg:py-12">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./app development</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">
+            {project(
+              "TaskTracker Mobile App - A productivity mobile app for task management with gamification elements",
+              yipyap,
+              "photo",
+              "task-tracker-app",
+              "app development",
+              "task-tracker-app-dev"
             )}
           </div>
         </div>
@@ -154,17 +234,26 @@ const Projects = () => {
             {project(
               "Blue car with glowing headlights and tinted windows",
               "1sOA-_QFZFkpbGOEOtuwEAWA38iR4Ix9g",
-              "video"
+              "video",
+              undefined,
+              undefined,
+              "car-3d"
             )}
             {project(
               "Winter Scene",
               "18aq7hg7TeZZ6sfiAg56FdL3J-bwkjS8W",
-              "video"
+              "video",
+              undefined,
+              undefined,
+              "winter-3d"
             )}
             {project(
               "Preliminary model of a donut with sprinkles",
               "1yD8b8MLdYxxpAwOsmEdku4q7WXXrmU-w",
-              "video"
+              "video",
+              undefined,
+              undefined,
+              "donut-3d"
             )}
           </div>
         </div>
@@ -175,50 +264,72 @@ const Projects = () => {
               "'Magic Mirror'for IEEE quarterly projects that compliments based on appearance",
               mirror,
               "photo",
-              "magic-mirror"
+              "magic-mirror",
+              undefined,
+              "magic-mirror-hw"
             )}
             {project(
               "Self playing guitar made with my team for IEEE quarterly projects, using arduinos and a 3D printed stand",
               "1aG2AoE3aque1Vt77wHr2rR48--pKkqy4",
               "video",
-              "self-playing-guitar"
+              "self-playing-guitar",
+              undefined,
+              "guitar-hw"
             )}
           </div>
         </div>
         <div className="flex flex-col gap-4 py-8 lg:py-12">
           <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./2d art and design</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">
-            {project("Family portrait", annu, "photo")}
+            {project("Family portrait", annu, "photo", undefined, undefined, "family-portrait")}
             {project(
               "Portrait from reference",
               greektragedy,
-              "photo"
+              "photo",
+              undefined,
+              undefined,
+              "greek-tragedy"
             )}
-            {project("Lemur - pencil sketch", lemur, "photo")}
+            {project("Lemur - pencil sketch", lemur, "photo", undefined, undefined, "lemur-sketch")}
             {project(
               "Car designed for my younger brother, featuring his favorite superheroes",
               marvel,
-              "photo"
+              "photo",
+              undefined,
+              undefined,
+              "marvel-car"
             )}
             {project(
               "Mona Lisa recreation, complete with frame",
               "13ngqzH-4pSXEm8JskU_xrJQKl0RXgtTj",
-              "video"
+              "video",
+              undefined,
+              undefined,
+              "mona-lisa"
             )}
             {project(
               "Wandavision portrait",
               wanda,
-              "photo"
+              "photo",
+              undefined,
+              undefined,
+              "wanda-portrait"
             )}
             {project(
               "My current labor of love",
               pearlgirl,
-              "photo"
+              "photo",
+              undefined,
+              undefined,
+              "pearl-girl"
             )}
             {project(
               "Bat animation for a game design",
               "15RpkvNoiJVODTbsSaz1qtwtKhZQXG2L8",
-              "video"
+              "video",
+              undefined,
+              undefined,
+              "bat-animation"
             )}
           </div>
         </div>
