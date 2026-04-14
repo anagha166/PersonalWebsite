@@ -10,7 +10,6 @@ interface ProjectData {
   inspiration: string;
   challenges: string[];
   process: string[];
-  images: string[];
   githubUrl?: string;
   liveUrl?: string;
   category: string;
@@ -65,16 +64,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
 
               {/* Scrollable Content */}
               <div className="overflow-y-auto max-h-[calc(90vh-120px)] p-6 space-y-6">
-                {/* Project Image */}
-                {project.images[0] && (
-                  <div className="w-full">
-                    <img
-                      src={project.images[0]}
-                      alt={project.title}
-                      className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
-                    />
-                  </div>
-                )}
+                
 
                 {/* Description */}
                 <div>
@@ -179,25 +169,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                     ))}
                   </ol>
                 </div>
-
-                {/* Additional Images */}
-                {project.images.length > 1 && (
-                  <div>
-                    <h3 className="text-xl font-mono text-white font-semibold mb-3">
-                      ./process_images
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {project.images.slice(1).map((image, index) => (
-                        <img
-                          key={index}
-                          src={image}
-                          alt={`${project.title} process ${index + 1}`}
-                          className="w-full h-48 object-cover rounded-lg shadow-lg"
-                        />
-                      ))}
-                    </div>
-                  </div>
-                )}
+                
 
               </div>
             </motion.div>

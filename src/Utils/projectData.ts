@@ -36,7 +36,6 @@ export const projectsData: ProjectData[] = [
       "/src/assets/Projects/Ascendtials.png",
       "/src/assets/Projects/Ascendtials.png"
     ],
-    githubUrl: "https://github.com/anagha166/ascendtials-website",
     liveUrl: "https://ascendtials.org",
     category: "Website Development"
   },
@@ -63,7 +62,7 @@ export const projectsData: ProjectData[] = [
       "/src/assets/Projects/DS3.png",
       "/src/assets/Projects/DS3.png"
     ],
-    liveUrl: "https://ds3.ucsd.edu",
+    liveUrl: "https://www.ds3atucsd.com/",
     category: "Website Development"
   },
   {
@@ -86,8 +85,33 @@ export const projectsData: ProjectData[] = [
       "/src/assets/Projects/Consulting.png",
       "/src/assets/Projects/Consulting.png"
     ],
-    liveUrl: "https://consulting.ds3.ucsd.edu",
     category: "Website Development"
+  },
+  {
+    "id": "studybuddy",
+    "title": "Study Buddy",
+    "description": "AI-powered learning platform that guides users through problems using Socratic questioning",
+    "longDescription": "Study Buddy is an AI-powered learning system designed to help users deeply understand concepts rather than just receive answers. By leveraging Socratic prompting, the platform guides users step-by-step through their reasoning process, encouraging critical thinking and active learning. The project involved designing intuitive user flows, building a responsive frontend, and integrating an AI backend to dynamically generate guiding questions tailored to user input.",
+    "tools": ["Figma", "Next.js", "Flask", "TailwindCSS"],
+    "inspiration": "The inspiration came from the idea that true learning happens through guided discovery rather than passive consumption. I wanted to build a tool that mimics how great teachers ask questions to lead students to answers on their own.",
+    "challenges": [
+      "Designing AI interactions that feel helpful without giving away answers",
+      "Creating a smooth conversational flow between user and system",
+      "Balancing simplicity in UI with complex backend logic",
+      "Ensuring responsiveness and usability across devices"
+    ],
+    "process": [
+      "Designed wireframes and interactive prototypes in Figma",
+      "Developed frontend using Next.js and TailwindCSS",
+      "Built backend with Flask to handle AI-driven prompts",
+      "Iterated on user experience through testing and feedback"
+    ],
+    "images": [
+      "/src/assets/Projects/StudyBuddy.png",
+      "/src/assets/Projects/StudyBuddy.png"
+    ],
+    "liveUrl": "",
+    "category": "AI / Web Application"
   },
   {
     id: "yipyap",
@@ -111,6 +135,33 @@ export const projectsData: ProjectData[] = [
       "/src/assets/Projects/Yipyap.png"
     ],
     category: "UI/UX Design"
+  },
+  {
+    "id": "bitefresh",
+    "title": "BiteFresh Smart Kitchen App",
+    "description": "An iOS app that helps users reduce food waste by tracking inventory and managing groceries.",
+    "longDescription": "BiteFresh is a smart kitchen assistant designed to reduce food waste and simplify grocery management, inspired by my experience sharing a fridge with roommates. The app allows users to track everything in their fridge and pantry, manage grocery lists, and monitor expiration dates. It integrates AI to estimate shelf life and provides an intuitive system to ensure food is used before it goes bad. The project focuses on combining thoughtful UX design with practical functionality to make everyday food management seamless and efficient.",
+    "tools": ["Figma", "Swift", "Xcode", "Google Gemini API", "iOS SDK"],
+    "inspiration": "This project was inspired by my experience sharing a fridge with roommates and noticing how often food would go to waste. I wanted to design a solution that makes it easy to keep track of what you have and use it in time, while keeping the experience simple and intuitive.",
+    "challenges": [
+      "Designing an intuitive inventory system that works for both perishable and non-perishable items",
+      "Integrating AI to estimate expiration dates in a meaningful and reliable way",
+      "Ensuring a smooth transition between grocery list items and inventory tracking",
+      "Balancing feature richness with a clean and simple user interface"
+    ],
+    "process": [
+      "Designed wireframes and high-fidelity prototypes in Figma",
+      "Developed the app in Swift using Xcode for iOS",
+      "Integrated Google Gemini API to estimate item expiration dates",
+      "Iterated on UX based on usability and real-life use cases",
+      "Planned future features like food bank integration and item scanning"
+    ],
+    "images": [
+      "/src/assets/Projects/BiteFresh1.png",
+      "/src/assets/Projects/BiteFresh2.png"
+    ],
+    "githubUrl": "https://github.com/anagha166/BiteFresh",
+    "category": "Mobile App Development"
   },
   {
     id: "magic-mirror",
