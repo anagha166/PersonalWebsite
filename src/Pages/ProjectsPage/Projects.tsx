@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { IoLogoFigma } from "react-icons/io5";
 import { FaJava } from "react-icons/fa";
 import { FaPython } from "react-icons/fa";
@@ -54,12 +55,13 @@ const Projects = () => {
     const isWebsiteProject = category === "website development";
     
     return (
-      <div 
-        className="flex flex-col items-left transform transition-transform hover:translate-y-[-5px] hover:shadow-gray-900 cursor-pointer"
+      <motion.div
+        className="group flex flex-col items-left transform transition-all duration-300 hover:translate-y-[-8px] cursor-pointer"
         onClick={() => projectId && openModal(projectId)}
+        whileHover={{ y: -8 }}
       >
         {type === "video" ? (
-          <div className={`w-full ${isWebsiteProject ? 'aspect-[4/3]' : 'aspect-square'} border-2 flex items-center justify-center rounded-lg overflow-hidden shadow-md`}>
+          <div className={`w-full ${isWebsiteProject ? 'aspect-[4/3]' : 'aspect-square'} border-2 border-white/30 bg-white/5 flex items-center justify-center rounded-lg overflow-hidden shadow-md group-hover:shadow-xl group-hover:shadow-black/30 transition-all duration-300`}>
             <iframe
               src={`https://drive.google.com/file/d/${path}/preview`}
               width="100%"
@@ -71,21 +73,27 @@ const Projects = () => {
           </div>
         ) : (
           <img
-            className={`w-full ${isWebsiteProject ? 'aspect-[13/8]' : 'aspect-square'} border-2 flex items-center justify-center rounded-lg overflow-hidden shadow-md object-cover`}
+            className={`w-full ${isWebsiteProject ? 'aspect-[13/8]' : 'aspect-square'} border-2 border-white/30 flex items-center justify-center rounded-lg overflow-hidden shadow-md object-cover transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:shadow-black/30`}
             src={path}
           />
         )}
-        <p className="text-xs md:text-sm lg:text-base text-white mt-2 pt-2 text-left">{caption}</p>
+        <p className="text-xs md:text-sm lg:text-base text-white mt-2 pt-2 text-left transition-colors duration-300 group-hover:text-amber-50">{caption}</p>
         {projectId && (
-          <p className="text-xs text-amber-50 mt-1 italic">Click to learn more</p>
+          <p className="text-xs text-amber-50 mt-1 italic opacity-80 group-hover:opacity-100 transition-opacity duration-300">Click to learn more</p>
         )}
-      </div>
+      </motion.div>
     );
   };
 
   return (
     <div className="mt-15 px-4 md:px-4 lg:px-16">
-      <div className="bg-[#748877] text-white font-mono w-full max-w-6xl mx-auto my-8 md:my-16 lg:my-10 rounded-4xl p-6 md:p-8 lg:p-12  flex-col justify-center">
+      <motion.div
+        className="bg-[#748877]/95 text-white font-mono w-full max-w-6xl mx-auto my-8 md:my-16 lg:my-10 rounded-4xl p-6 md:p-8 lg:p-12 flex-col justify-center border border-white/10 shadow-xl"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.55 }}
+      >
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-20">
           <h1 className="text-3xl md:text-2xl lg:text-3xl text-center lg:text-left">cd my-projects</h1>
           <div className="text-sm md:text-base lg:text-lg mt-4 lg:mt-8 w-full lg:w-[45vw] pt-4">
@@ -112,13 +120,25 @@ const Projects = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className="flex justify-center">
-        <img className="max-w-full h-[10vw]" src={lizard} alt="" />
+        <img className="max-w-full h-[10vw] floating-lizard" src={lizard} alt="" />
       </div>
-      <div className="bg-[#748877] text-white font-mono w-full max-w-6xl mx-auto rounded-4xl mt-16 lg:mt-36 px-6 md:px-12 lg:px-36 py-12 lg:py-20 flex-col justify-end align-end items-center mb-12 lg:mb-20">
-        <div className="flex flex-col gap-4 py-8 lg:py-12">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./website development</h1>
+      <motion.div
+        className="bg-[#748877]/95 text-white font-mono w-full max-w-6xl mx-auto rounded-4xl mt-16 lg:mt-36 px-6 md:px-12 lg:px-36 py-12 lg:py-20 flex-col justify-end align-end items-center mb-12 lg:mb-20 border border-white/10 shadow-2xl"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.65 }}
+      >
+        <motion.div
+          className="flex flex-col gap-4 py-8 lg:py-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45 }}
+        >
+          <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./ui/ux design</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-12">
             {project(
               "Website Redesign for local non-profit organization, ASCENDtials",
@@ -163,8 +183,14 @@ const Projects = () => {
               "website development"
             )}
           </div>
-        </div>
-        <div className="flex flex-col gap-4 py-8 lg:py-12">
+        </motion.div>
+        <motion.div
+          className="flex flex-col gap-4 py-8 lg:py-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45 }}
+        >
           <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./3d modeling</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">
             {project(
@@ -183,8 +209,14 @@ const Projects = () => {
               "video"
             )}
           </div>
-        </div>
-        <div className="flex flex-col gap-4 py-8 lg:py-12">
+        </motion.div>
+        <motion.div
+          className="flex flex-col gap-4 py-8 lg:py-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45 }}
+        >
           <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./hardware</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">
             {project(
@@ -200,8 +232,14 @@ const Projects = () => {
               "self-playing-guitar"
             )}
           </div>
-        </div>
-        <div className="flex flex-col gap-4 py-8 lg:py-12">
+        </motion.div>
+        <motion.div
+          className="flex flex-col gap-4 py-8 lg:py-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45 }}
+        >
           <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./2d art and design</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">
             {project("Family portrait", annu, "photo")}
@@ -237,8 +275,8 @@ const Projects = () => {
               "video"
             )}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       
       {/* Project Modal */}
       <ProjectModal

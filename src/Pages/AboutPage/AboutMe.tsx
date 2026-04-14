@@ -16,12 +16,19 @@ const AboutMe = () => {
     <div className="flex font-mono flex-col items-center justify-center min-h-screen px-4 md:px-8 lg:px-16">
       <div className="flex flex-col lg:flex-row my-12 lg:my-28 gap-8 lg:gap-16 w-full max-w-7xl">
         <div className="bg-[#748877] w-full lg:w-[40vw] lg:h-[40vw] rounded-4xl md:p-12 lg:p-15 font-mono">
-          <h1 className="text-2xl md:text-2xl lg:text-3xl text-white">cd about-me</h1>
+          <h1 className="text-2xl md:text-2xl lg:text-3xl text-white">
+            cd about-me
+          </h1>
           <p className="text-white text-sm md:text-base lg:text-lg pt-12 lg:pt-12">
             Hi! I'm a full-stack developer with a passion for problem-solving
             and art. I am currently based in San Diego, pursing my Bachelor's
             degree in Mathematics-Computer Science at UCSD, minoring in
-            Cognitive Science.
+            Cognitive Science. 
+          </p>
+          <p className="text-white text-sm md:text-base lg:text-lg pt-12 lg:pt-12">
+            In my free time, you can find me drawing, dancing, painting, or in
+            the kitchen combining ingredients most people wouldnt put together
+            (hot honey on EVERYTHING)
           </p>
         </div>
         <div className="flex flex-1 justify-center items-center mt-6">
@@ -42,32 +49,8 @@ const AboutMe = () => {
           </motion.div>
         </div>
       </div>
-      <div className="bg-[#748877] w-full max-w-6xl my-12 lg:my-24 rounded-4xl justify-center items-center p-4 md:p-8 flex flex-col gap-6 lg:gap-10">
-        <div className="flex flex-col lg:flex-row p-4 gap-5">
-          <div className="flex flex-col lg:flex-row p-6 md:p-8 lg:p-12 gap-5">
-            <div className="rounded-4xl w-full lg:w-[30vw] h-[50vw] lg:h-[30vw] m-4 lg:mx-16 font-mono flex justify-center">
-              <img
-                className="w-full h-full flex items-center justify-center rounded-4xl overflow-hidden object-cover"
-                src={windows}
-              />
-            </div>
-            <div className="flex flex-col px-6 md:px-8 lg:px-12 py-8 lg:py-16 w-full lg:w-[50vw]">
-              <h1 className="text-2xl md:text-3xl text-white">./in_my_free_time...</h1>
-              <p className="text-white text-sm md:text-base lg:text-lg pt-6 lg:pt-10">
-                You can find me designing and creating various sites and apps, as well
-                as trying out different Blender rendering techniques. When I'm
-                not working, I'm likely at practice for my dance team, Raas
-                Ruckus, preparing to travel the country competing in Raas-Garba
-                style dance. Outside of school, I love making memories with my
-                family and friends, playing games like Bopl Battle, and
-                exploring new places.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="bg-[#748877] text-white w-full max-w-6xl my-12 lg:my-24 rounded-4xl justify-center items-center p-4 md:p-8 flex flex-col gap-5">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl pt-12 lg:pt-20">cd my-gallery</h1>
+
+      <div className="text-white w-full max-w-6xl my-12 lg:my-24 rounded-4xl justify-center items-center p-4 md:p-8 flex flex-col gap-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pt-8 lg:pt-15 gap-4 lg:gap-5 w-full">
           <div className="rounded-4xl w-full aspect-square font-mono">
             <img
