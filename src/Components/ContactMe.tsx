@@ -3,9 +3,9 @@ import sigma from "../assets/Landing/Signature.png";
 
 const ContactMe = () => {
   return (
-    <div className="bg-[#748877] w-full max-w-4xl rounded-4xl m-4 md:m-8 lg:m-16 px-4 md:px-8 font-mono">
-      <div className="flex justify-center items-center min-h-screen px-2">
-        <div className="grid gap-8 md:gap-12 lg:gap-20 md:grid-cols-2 max-w-full w-full px-4">
+    <div className="bg-[#748877]/95 w-full max-w-5xl rounded-4xl mx-auto my-10 md:my-14 lg:my-16 px-4 md:px-10 lg:px-14 font-mono border border-white/10 shadow-2xl">
+      <div className="flex justify-center items-center py-10 md:py-14 lg:py-16">
+        <div className="grid gap-10 lg:gap-14 grid-cols-1 md:grid-cols-2 w-full">
           <div className="flex flex-col justify-between gap-6 md:gap-8 md:order-1">
             <div className="pt-8 md:pt-4 flex flex-col">
               <div className="flex flex-col w-full gap-6 md:gap-12">
@@ -19,7 +19,7 @@ const ContactMe = () => {
                   <p className="pt-4">I would love to hear from you!</p>
                   <div className="flex justify-center md:justify-start">
                     <img
-                      className="pt-8 md:pt-12 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48"
+                      className="pt-8 md:pt-10 w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 object-contain"
                       src={sigma}
                       alt=""
                     />
@@ -29,7 +29,7 @@ const ContactMe = () => {
             </div>
           </div>
 
-          <div className="md:order-3">
+          <div className="md:order-3 w-full">
             <ContactForm />
           </div>
         </div>

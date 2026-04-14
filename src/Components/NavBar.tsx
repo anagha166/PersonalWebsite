@@ -50,7 +50,7 @@ const Navbar = () => {
           </Link>
           <a
             className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e]"
-            href="https://drive.google.com/file/d/1nIMVGwJsbV6IJbz2ReZxPPWoSmZ4qR3A/view?usp=sharing"
+            href="https://drive.google.com/file/d/1zoUY9JKBKGChQCr2C6uWtLK9JLSYqiC4/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -83,7 +83,7 @@ const Navbar = () => {
             </Link>
             <a
               className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e] w-32 text-center"
-              href="https://drive.google.com/file/d/1nIMVGwJsbV6IJbz2ReZxPPWoSmZ4qR3A/view?usp=sharing"
+              href="https://drive.google.com/file/d/1zoUY9JKBKGChQCr2C6uWtLK9JLSYqiC4/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
