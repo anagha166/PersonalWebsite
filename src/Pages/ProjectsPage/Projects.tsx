@@ -12,6 +12,8 @@ import annu from "/src/assets/Projects/Annu.png";
 import ascend from "/src/assets/Projects/Ascendtials.png";
 import consulting from "/src/assets/Projects/Consulting.png";
 import ds3 from "/src/assets/Projects/DS3.png";
+import studybuddy from "/src/assets/Projects/StudyBuddy.png";
+import bitefresh from "/src/assets/Projects/BiteFresh.png";
 import mirror from "/src/assets/Projects/Mirror.png";
 import greektragedy from "/src/assets/Projects/GreekTragedy.png";
 import lemur from "/src/assets/Projects/Lemur.png";
@@ -133,10 +135,24 @@ const Projects = () => {
               "website development"
             )}
             {project(
+              "'BiteFresh' - Smart Kitchen App",
+              bitefresh,
+              "photo",
+              "bitefresh",
+              "website development"
+            )}
+            {project(
               "Consulting website redesign for UCSD's Data Science Student Society",
               consulting,
               "photo",
               "consulting",
+              "website development"
+            )}
+            {project(
+              "Study Buddy’ - AI-powered learning tool",
+              studybuddy,
+              "photo",
+              "studybuddy",
               "website development"
             )}
             {project(
