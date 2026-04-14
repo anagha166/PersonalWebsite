@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import wave1 from "/src/assets/AboutMe/Wave1.png";
 import wave2 from "/src/assets/AboutMe/Wave2.png";
-import windows from "/src/assets/AboutMe/Window.png";
 import newyawk from "/src/assets/AboutMe/NewYawk.png";
 import ruckus from "/src/assets/AboutMe/Ruckus.png";
 import workshop from "/src/assets/AboutMe/Workshop.png";
