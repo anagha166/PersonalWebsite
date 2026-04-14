@@ -4,6 +4,7 @@ import { BsGithub } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { FaHeart } from "react-icons/fa";
 import { FaPaintBrush } from "react-icons/fa";
+import { IoLogoFigma } from "react-icons/io5";
 
 const Footer = () => {
   return (
@@ -39,6 +40,14 @@ const Footer = () => {
           title="Instagram"
         >
           <BsInstagram className="hover:cursor-pointer hover:rotate-2 hover:scale-120" />
+        </a>
+
+        <a
+          href="https://www.figma.com/design/zr6gaowuvk26BAXcc17BAV/Figma-Portfolio?node-id=0-1&p=f&t=dRebldDxvNLR688q-0"
+          target="_blank"
+          title="Figma"
+        >
+          <IoLogoFigma className="hover:cursor-pointer hover:rotate-2 hover:scale-120" />
         </a>
 
         <a
