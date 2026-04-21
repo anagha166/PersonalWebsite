@@ -1,5 +1,5 @@
 import Icon from "./Icon";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { projectsData } from "../../Utils/projectData";
@@ -11,11 +11,7 @@ import bitefresh from "/src/assets/Projects/BiteFresh.png";
 import mirror from "/src/assets/Projects/Mirror.png";
 import yipyap from "/src/assets/Projects/Yipyap.png";
 
-const Hero = ({
-  AboutMeRef,
-}: {
-  AboutMeRef: React.RefObject<HTMLDivElement>;
-}) => {
+const Hero = () => {
   const projectImageById: Record<string, string> = {
     ascendtials: ascend,
     ds3,
@@ -27,14 +23,9 @@ const Hero = ({
     "self-playing-guitar": mirror,
   };
 
-  const [showArrow] = useState(true);
   const featuredProjects = projectsData.filter((project) => project.images.length > 0);
   const [featuredProjectIndex, setFeaturedProjectIndex] = useState(0);
   const featuredProject = featuredProjects[featuredProjectIndex];
-
-  const handleScroll = () => {
-    AboutMeRef.current.scrollIntoView({ behavior: "smooth" });
-  };
 
   const TypingText = ({ text, delay }: { text: string; delay: number }) => {
     const [displayedText, setDisplayedText] = useState("");
