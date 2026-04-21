@@ -125,7 +125,7 @@ const Projects = () => {
         <img className="max-w-full h-[10vw] floating-lizard" src={lizard} alt="" />
       </div>
       <motion.div
-        className="bg-[#748877]/95 text-white font-mono w-full max-w-6xl mx-auto rounded-4xl mt-16 lg:mt-36 px-6 md:px-12 lg:px-36 py-12 lg:py-20 flex-col justify-end align-end items-center mb-12 lg:mb-20 border border-white/10 shadow-2xl"
+        className="text-white font-mono w-full max-w-6xl mx-auto rounded-4xl mt-16 lg:mt-36 px-6 md:px-12 lg:px-36 py-12 lg:py-20 flex-col justify-end align-end items-center mb-12 lg:mb-20 border border-white/10 shadow-2xl"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
@@ -141,42 +141,42 @@ const Projects = () => {
           <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./ui/ux design</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-12">
             {project(
-              "Website Redesign for local non-profit organization, ASCENDtials",
+              "Redesigned the ASCENDtials nonprofit website to improve trust signals, accessibility, and key action flow.",
               ascend,
               "photo",
               "ascendtials",
               "website development"
             )}
             {project(
-              "Main website redesign for UCSD's Data Science Student Society",
+              "Reworked DS3's information architecture so students can find events, resources, and opportunities faster.",
               ds3,
               "photo",
               "ds3",
               "website development"
             )}
             {project(
-              "'BiteFresh' - Smart Kitchen App",
+              "Designed a mobile-first inventory and grocery flow to help users reduce food waste with less effort.",
               bitefresh,
               "photo",
               "bitefresh",
               "website development"
             )}
             {project(
-              "Consulting website redesign for UCSD's Data Science Student Society",
+              "Created a consulting case-study experience that communicates outcomes clearly to potential clients.",
               consulting,
               "photo",
               "consulting",
               "website development"
             )}
             {project(
-              "Study Buddy’ - AI-powered learning tool",
+              "Crafted a guided learning experience where AI prompts support critical thinking step by step.",
               studybuddy,
               "photo",
               "studybuddy",
               "website development"
             )}
             {project(
-              "'YipYap' - Preliminary designs for a joint project to create a chat app designed for chatty people",
+              "Led early UX research and concept design for a chat app built around high-engagement conversation patterns.",
               yipyap,
               "photo",
               "yipyap",

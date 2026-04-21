@@ -1,5 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FiAlertCircle,
+  FiCheckCircle,
+  FiCompass,
+  FiLayers,
+  FiTool,
+} from "react-icons/fi";
 
 interface ProjectData {
   id: string;
@@ -30,7 +37,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
         <>
           {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 bg-[#D7C59F] bg-opacity-50 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/65 z-50 flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -66,20 +73,75 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
               <div className="overflow-y-auto max-h-[calc(90vh-120px)] p-6 space-y-6">
                 
 
-                {/* Description */}
-                <div>
-                  <h3 className="text-xl font-mono text-white font-semibold mb-3">
-                    ./description
-                  </h3>
-                  <p className="text-white/90 leading-relaxed mb-4">
-                    {project.longDescription}
-                  </p>
-                  
-                  {/* Tools integrated into description */}
-                  <div className="mb-4">
-                    <h4 className="text-lg font-mono text-amber-50 font-semibold mb-2">
-                      Built with:
-                    </h4>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-xl font-mono text-white font-semibold mb-3 flex items-center gap-2">
+                      <FiLayers className="text-amber-50" />
+                      Case Study Overview
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="rounded-xl border border-white/20 bg-white/5 p-4">
+                        <p className="text-xs uppercase tracking-wider text-amber-50/90 mb-2">
+                          Problem Space
+                        </p>
+                        <p className="text-white/90 leading-relaxed">
+                          {project.longDescription}
+                        </p>
+                      </div>
+                      <div className="rounded-xl border border-white/20 bg-white/5 p-4">
+                        <p className="text-xs uppercase tracking-wider text-amber-50/90 mb-2">
+                          Design Intent
+                        </p>
+                        <p className="text-white/90 leading-relaxed">
+                          {project.inspiration}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-mono text-white font-semibold mb-3 flex items-center gap-2">
+                      <FiAlertCircle className="text-amber-50" />
+                      Key Challenges
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {project.challenges.map((challenge, index) => (
+                        <div
+                          key={index}
+                          className="rounded-lg border border-white/20 bg-white/5 p-3 text-white/90 text-sm leading-relaxed flex items-start gap-2"
+                        >
+                          <FiAlertCircle className="text-amber-50 mt-0.5 shrink-0" />
+                          <span>{challenge}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-mono text-white font-semibold mb-3 flex items-center gap-2">
+                      <FiCompass className="text-amber-50" />
+                      Process
+                    </h3>
+                    <ol className="space-y-3">
+                      {project.process.map((step, index) => (
+                        <li
+                          key={index}
+                          className="rounded-lg border border-white/20 bg-white/5 p-3 text-white/90 flex items-start gap-3"
+                        >
+                          <span className="text-amber-50 font-mono text-sm mt-0.5">
+                            {index + 1}.
+                          </span>
+                          <span>{step}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-mono text-white font-semibold mb-3 flex items-center gap-2">
+                      <FiTool className="text-amber-50" />
+                      Tools
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {project.tools.map((tool, index) => (
                         <span
@@ -92,13 +154,13 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                     </div>
                   </div>
 
-                  {/* View Live Project Section */}
                   {(project.liveUrl || project.githubUrl) && (
-                    <div className="mb-4">
-                      <h4 className="text-lg font-mono text-amber-50 font-semibold mb-2">
-                        View Project:
-                      </h4>
-                      <div className="flex gap-4">
+                    <div>
+                      <h3 className="text-xl font-mono text-white font-semibold mb-3 flex items-center gap-2">
+                        <FiCheckCircle className="text-amber-50" />
+                        Explore Deliverable
+                      </h3>
+                      <div className="flex flex-wrap gap-4">
                         {project.liveUrl && (
                           <a
                             href={project.liveUrl}
@@ -125,49 +187,6 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                       </div>
                     </div>
                   )}
-                </div>
-
-
-                {/* Inspiration */}
-                <div>
-                  <h3 className="text-xl font-mono text-white font-semibold mb-3">
-                    ./inspiration
-                  </h3>
-                  <p className="text-white/90 leading-relaxed">
-                    {project.inspiration}
-                  </p>
-                </div>
-
-                {/* Challenges */}
-                <div>
-                  <h3 className="text-xl font-mono text-white font-semibold mb-3">
-                    ./challenges
-                  </h3>
-                  <ul className="space-y-2">
-                    {project.challenges.map((challenge, index) => (
-                      <li key={index} className="text-white/90 flex items-start">
-                        <span className="text-amber-50 mr-2">•</span>
-                        {challenge}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Process */}
-                <div>
-                  <h3 className="text-xl font-mono text-white font-semibold mb-3">
-                    ./process
-                  </h3>
-                  <ol className="space-y-2">
-                    {project.process.map((step, index) => (
-                      <li key={index} className="text-white/90 flex items-start">
-                        <span className="text-amber-50 mr-2 font-mono">
-                          {index + 1}.
-                        </span>
-                        {step}
-                      </li>
-                    ))}
-                  </ol>
                 </div>
                 
 
