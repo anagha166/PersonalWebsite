@@ -17,7 +17,7 @@ export const projectsData: ProjectData[] = [
   {
     id: "ascendtials",
     title: "ASCENDtials Website Redesign",
-    description: "Website Redesign for local non-profit organization, ASCENDtials",
+    description: "Redesigned a nonprofit site to improve trust, accessibility, and donation-ready navigation for community members.",
     longDescription: "A comprehensive website redesign for ASCENDtials, a local non-profit organization focused on empowering underserved communities. The project involved complete UI/UX overhaul, content restructuring, and implementation of modern web technologies to improve user engagement and accessibility.",
     tools: ["Figma", "WordPress", "HTML", "CSS", "JavaScript", "PHP"],
     inspiration: "The inspiration came from the organization's mission to uplift communities. I wanted to create a website that felt welcoming, trustworthy, and easy to navigate for people of all backgrounds and technical abilities.",
@@ -42,7 +42,7 @@ export const projectsData: ProjectData[] = [
   {
     id: "ds3",
     title: "UCSD Data Science Student Society",
-    description: "Main website redesign for UCSD's Data Science Student Society",
+    description: "Led UX direction for a student org website redesign, improving information hierarchy and event discoverability.",
     longDescription: "Complete redesign of the Data Science Student Society website at UCSD. This project focused on creating an inspiring, engaging platform for students to connect, learn about events, and access resources. The new design emphasizes community building and professional development opportunities.",
     tools: ["Figma", "React", "TypeScript", "TailwindCSS", "HTML", "CSS", "JavaScript"],
     inspiration: "Inspired by the vibrant data science community at UCSD and the need for better student engagement. Our goal was to create a platform that would serve as a central hub for all data science activities and resources on campus, with information displayed in a more engaging and legible manner than before.",
@@ -68,7 +68,7 @@ export const projectsData: ProjectData[] = [
   {
     id: "consulting",
     title: "DS3 Consulting Website",
-    description: "Consulting website redesign for UCSD's Data Science Student Society",
+    description: "Designed a consulting-focused experience that frames student projects as clear, credible case studies for potential clients.",
     longDescription: "A specialized consulting platform for the Data Science Student Society's consulting services. This project created a professional showcase for student consulting projects, client testimonials, and service offerings. The design emphasizes credibility and professional presentation.",
     tools: ["Figma", "React", "TypeScript", "TailwindCSS", "HTML", "CSS", "JavaScript"],
     inspiration: "The need to present student consulting work professionally to potential clients.",
@@ -90,7 +90,7 @@ export const projectsData: ProjectData[] = [
   {
     "id": "studybuddy",
     "title": "Study Buddy",
-    "description": "AI-powered learning platform that guides users through problems using Socratic questioning",
+    "description": "Designed an AI learning flow that uses Socratic prompts to keep students engaged in reasoning, not answer copying.",
     "longDescription": "Study Buddy is an AI-powered learning system designed to help users deeply understand concepts rather than just receive answers. By leveraging Socratic prompting, the platform guides users step-by-step through their reasoning process, encouraging critical thinking and active learning. The project involved designing intuitive user flows, building a responsive frontend, and integrating an AI backend to dynamically generate guiding questions tailored to user input.",
     "tools": ["Figma", "Next.js", "Flask", "TailwindCSS"],
     "inspiration": "The inspiration came from the idea that true learning happens through guided discovery rather than passive consumption. I wanted to build a tool that mimics how great teachers ask questions to lead students to answers on their own.",
@@ -116,7 +116,7 @@ export const projectsData: ProjectData[] = [
   {
     id: "yipyap",
     title: "YipYap Chat App",
-    description: "'YipYap' - Preliminary designs for a joint project to create a chat app designed for chatty people. My role was to lead the initial design and user experience research.",
+    description: "Led concept UX and early research for a conversation-first chat app focused on reducing friction and boosting engagement.",
     longDescription: "YipYap is a conceptual chat application designed specifically for people who love to chat. The app features unique UI elements that encourage conversation, including animated typing indicators, conversation starters, and gamified chat features. This project focused on the initial design and user experience research.",
     tools: ["Figma", "User Research", "Prototyping"],
     inspiration: "The idea came from my boyfriend and I discussing the need for a chat app designed to keep people engaged in conversation, or to put it informally, to let them yap",
@@ -139,7 +139,7 @@ export const projectsData: ProjectData[] = [
   {
     "id": "bitefresh",
     "title": "BiteFresh Smart Kitchen App",
-    "description": "An iOS app that helps users reduce food waste by tracking inventory and managing groceries.",
+    "description": "Designed an iOS kitchen companion that helps roommates track inventory, expiration windows, and grocery decisions in one flow.",
     "longDescription": "BiteFresh is a smart kitchen assistant designed to reduce food waste and simplify grocery management, inspired by my experience sharing a fridge with roommates. The app allows users to track everything in their fridge and pantry, manage grocery lists, and monitor expiration dates. It integrates AI to estimate shelf life and provides an intuitive system to ensure food is used before it goes bad. The project focuses on combining thoughtful UX design with practical functionality to make everyday food management seamless and efficient.",
     "tools": ["Figma", "Swift", "Xcode", "Google Gemini API", "iOS SDK"],
     "inspiration": "This project was inspired by my experience sharing a fridge with roommates and noticing how often food would go to waste. I wanted to design a solution that makes it easy to keep track of what you have and use it in time, while keeping the experience simple and intuitive.",

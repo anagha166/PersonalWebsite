@@ -1,14 +1,36 @@
 import Icon from "./Icon";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaLeaf } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { projectsData } from "../../Utils/projectData";
+import ascend from "/src/assets/Projects/Ascendtials.png";
+import consulting from "/src/assets/Projects/Consulting.png";
+import ds3 from "/src/assets/Projects/DS3.png";
+import studybuddy from "/src/assets/Projects/StudyBuddy.png";
+import bitefresh from "/src/assets/Projects/BiteFresh.png";
+import mirror from "/src/assets/Projects/Mirror.png";
+import yipyap from "/src/assets/Projects/Yipyap.png";
 
 const Hero = ({
   AboutMeRef,
 }: {
   AboutMeRef: React.RefObject<HTMLDivElement>;
 }) => {
+  const projectImageById: Record<string, string> = {
+    ascendtials: ascend,
+    ds3,
+    consulting,
+    studybuddy,
+    yipyap,
+    bitefresh,
+    "magic-mirror": mirror,
+    "self-playing-guitar": mirror,
+  };
+
   const [showArrow] = useState(true);
+  const featuredProjects = projectsData.filter((project) => project.images.length > 0);
+  const [featuredProjectIndex, setFeaturedProjectIndex] = useState(0);
+  const featuredProject = featuredProjects[featuredProjectIndex];
 
   const handleScroll = () => {
     AboutMeRef.current.scrollIntoView({ behavior: "smooth" });
@@ -54,6 +76,20 @@ const Hero = ({
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (featuredProjects.length <= 1) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setFeaturedProjectIndex(
+        (prevIndex) => (prevIndex + 1) % featuredProjects.length
+      );
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, [featuredProjects.length]);
+
   return (
     <div className="bg-[#748877] font-mono">
       <div className="min-h-screen w-screen flex flex-col md:flex-row gap-[0.1vw] justify-center items-center px-4 md:px-0">
@@ -64,31 +100,46 @@ const Hero = ({
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[1.2vw] w-full md:w-[40vw] pt-4 md:mr-10">
             <TypingText text={currentStatement} delay={30} />
           </p>
+          {featuredProject && (
+            <div className="w-full md:w-[33vw] mt-5 p-3 rounded-xl bg-white/10 border border-white/30">
+              <p className="text-xs sm:text-sm uppercase tracking-widest text-white/80">
+                Featured project
+              </p>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={featuredProject.id}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.35 }}
+                  className="mt-3"
+                >
+                  <img
+                    src={projectImageById[featuredProject.id] ?? featuredProject.images[0]}
+                    alt={featuredProject.title}
+                    className="w-full h-28 sm:h-36 object-cover rounded-lg border border-white/20"
+                  />
+                  <h2 className="mt-2 text-base sm:text-lg">{featuredProject.title}</h2>
+                  <p className="mt-1 text-xs text-white/90">
+                    {featuredProject.description}
+                  </p>
+                  <div className="mt-2 flex items-center justify-between gap-2">
+                    <span className="text-xs text-white/80">
+                      Rotates every 30 seconds
+                    </span>
+                    <Link
+                      to="/projects"
+                      className="text-xs px-2.5 py-1 rounded-md border border-white/60 hover:bg-white hover:text-[#748877] transition-colors"
+                    >
+                      See all work
+                    </Link>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          )}
         </div>
       </div>
-      <AnimatePresence>
-        {showArrow && (
-          <motion.div
-            className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{
-              opacity: 1,
-              y: [0, -20, 0], // Creates a bounce effect
-            }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{
-              duration: 1, // Adjust speed of bounce
-              repeat: Infinity, // Infinite loop
-              repeatType: "reverse", // Makes it go up and down smoothly
-              ease: "easeInOut",
-            }}
-          >
-            <button className="hover:cursor-pointer" onClick={handleScroll}>
-              <FaLeaf className="flex justify-center rotate-[110deg] mx-auto items-center text-4xl text-[#748877]" />
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };
