@@ -8,7 +8,7 @@ import { IoLogoFigma } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <div className="bg-[#748877] w-full flex justify-between p-4">
+    <div className="bg-[#4C5F4D] w-full flex justify-between p-4">
       <div className="flex justify-start flex-col gap-2 items-center text-sm font-medium">
         <span className="text-white flex gap-2">
           <span className="hidden sm:inline">Made with </span>

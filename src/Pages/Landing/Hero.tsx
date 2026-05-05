@@ -46,9 +46,9 @@ const Hero = () => {
 
   // Managing the state for the current statement
   const statements = [
-    "anaghakamath@my-website my-website %  cd landing-page", "I'm driven by the curiosity of how we think and interact with the world around us",
+    "anaghakamath@my-website my-website %  cd landing-page", 
     "(computer + cognitive) science + math",
-    "I strive to create elegant solutions that combine efficiency with meaningful user engagement.",
+    "open to work!"
   ];
 
   const [currentStatement, setCurrentStatement] = useState<string>(
@@ -92,10 +92,7 @@ const Hero = () => {
             <TypingText text={currentStatement} delay={30} />
           </p>
           {featuredProject && (
-            <div className="w-full md:w-[33vw] mt-5 p-3 rounded-xl bg-white/10 border border-white/30">
-              <p className="text-xs sm:text-sm uppercase tracking-widest text-white/80">
-                Featured project
-              </p>
+            <div className="w-full md:w-[33vw] mt-5 p-3 rounded-xl bg-white/10 border border-white/30">        
               <AnimatePresence mode="wait">
                 <motion.div
                   key={featuredProject.id}
@@ -108,21 +105,17 @@ const Hero = () => {
                   <img
                     src={projectImageById[featuredProject.id] ?? featuredProject.images[0]}
                     alt={featuredProject.title}
-                    className="w-full h-28 sm:h-36 object-cover rounded-lg border border-white/20"
+                    className="w-full h-[18vw] sm:h-[18vw] object-cover rounded-lg border border-white/20"
                   />
-                  <h2 className="mt-2 text-base sm:text-lg">{featuredProject.title}</h2>
                   <p className="mt-1 text-xs text-white/90">
                     {featuredProject.description}
                   </p>
                   <div className="mt-2 flex items-center justify-between gap-2">
-                    <span className="text-xs text-white/80">
-                      Rotates every 30 seconds
-                    </span>
                     <Link
                       to="/projects"
                       className="text-xs px-2.5 py-1 rounded-md border border-white/60 hover:bg-white hover:text-[#748877] transition-colors"
                     >
-                      See all work
+                      See my work
                     </Link>
                   </div>
                 </motion.div>

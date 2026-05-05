@@ -50,7 +50,7 @@ const Navbar = () => {
           </Link>
           <a
             className="rounded-xl py-2 border-2 border-amber-50 bg-[#748877]/50 px-4 hover:bg-[#89ac8e]"
-            href="https://drive.google.com/file/d/1zoUY9JKBKGChQCr2C6uWtLK9JLSYqiC4/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1g_i7og2lmLxPQYM04UDhDt0Ftq2lXQ2O/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
