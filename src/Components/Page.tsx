@@ -12,7 +12,7 @@ const Page = ({ children }: PageProps) => {
     <div>
       <MouseTrail />
       <Navbar />
-      <div className="relative flex flex-col items-center bg-[#3D4B3F] min-h-screen overflow-hidden px-4 md:px-0">
+      <div className="relative flex flex-col items-center bg-[#4C5F4D] min-h-screen overflow-hidden px-4 md:px-0">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="ambient-blob ambient-blob-1" />
           <div className="ambient-blob ambient-blob-2" />
