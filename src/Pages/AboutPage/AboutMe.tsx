@@ -1,53 +1,12 @@
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import ContactMe from '../../Components/ContactMe'
 import wave1 from "/src/assets/AboutMe/Wave1.png";
 import wave2 from "/src/assets/AboutMe/Wave2.png";
 
 const AboutMe = () => {
   const [img, setImg] = useState(wave1);
-  const focusAreas = [
-    {
-      title: "Product + Design",
-      skills: [
-        "UI/UX Design",
-        "Interaction Design",
-        "Design Systems",
-        "Prototyping (Figma)",
-        "Human-Centered Design",
-      ],
-    },
-    {
-      title: "Frontend Development",
-      skills: [
-        "React",
-        "JavaScript",
-        "HTML/CSS",
-        "TailwindCSS",
-        "Component-Based Design",
-      ],
-    },
-    {
-      title: "Design + Communication",
-      skills: [
-        "Visual Design",
-        "Digital Campaigns",
-        "Content Design",
-        "Storytelling",
-        "Data-Informed Iteration",
-      ],
-    },
-    {
-      title: "Systems Thinking",
-      skills: [
-        "Cognitive Science",
-        "User Behavior",
-        "Information Architecture",
-        "Complex Systems",
-        "Problem Framing",
-      ],
-    },
-  ];
+  const [activeExperience, setActiveExperience] = useState(-1);
 
   const timeline = [
     {
@@ -97,56 +56,6 @@ const AboutMe = () => {
     },
   ];
 
-  const focusSectionRef = useRef<HTMLElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: focusSectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const FocusStackCard = ({
-    area,
-    index,
-  }: {
-    area: (typeof focusAreas)[number];
-    index: number;
-  }) => {
-    const start = 0.16 * index;
-    const y = useTransform(
-      scrollYProgress as MotionValue<number>,
-      [start, start + 0.18],
-      [90, 0],
-    );
-    const opacity = useTransform(
-      scrollYProgress as MotionValue<number>,
-      [start * 0.92, start + 0.16],
-      [0.6, 1],
-    );
-    const scale = useTransform(
-      scrollYProgress as MotionValue<number>,
-      [start, start + 0.18],
-      [0.97, 1],
-    );
-
-    return (
-      <motion.div
-        className="sticky top-24 rounded-2xl border border-white/20 bg-[#748877]/95 backdrop-blur-sm p-5 md:p-6 shadow-[0_12px_30px_rgba(0,0,0,0.2)]"
-        style={{ y, opacity, scale, zIndex: 10 + index }}
-      >
-        <p className="text-lg md:text-xl">{area.title}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {area.skills.map((skill) => (
-            <span
-              key={skill}
-              className="text-xs md:text-sm border border-white/30 rounded-full px-3 py-1 text-white/90"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </motion.div>
-    );
-  };
-
   return (
     <div className="flex font-mono flex-col items-center min-h-screen px-4 md:px-8 lg:px-16 py-10 md:py-14 text-white">
       <div className="w-full max-w-6xl">
@@ -162,7 +71,7 @@ const AboutMe = () => {
               alt="Anagha portrait illustration"
               className="w-full h-full object-contain z-10"
             />
-            <div className="absolute top-7 border-4 rounded-full w-[90%] h-[90%] border-[#00000] transition-shadow hover:shadow-2xl z-0" />
+            <div className="absolute top-7 border-4 rounded-full w-[90%] h-[90%] border-white/40 transition-shadow hover:shadow-2xl z-0" />
           </motion.div>
 
           <div className="text-center lg:text-left">
@@ -180,52 +89,55 @@ const AboutMe = () => {
           </div>
         </div>
 
-        <section ref={focusSectionRef} className="mt-16 md:mt-20">
-          <div className="flex items-end justify-between gap-4">
-            <h2 className="text-2xl md:text-3xl">Focus & Expertise</h2>
-            <p className="text-xs md:text-sm uppercase tracking-[0.2em] text-white/60">
-              Skill Areas
-            </p>
-          </div>
-          <div className="mt-7 pb-24 md:pb-32">
-            {focusAreas.map((area, index) => (
-              <div
-                key={area.title}
-                className={index === 0 ? "" : "-mt-10 md:-mt-14"}
-              >
-                <FocusStackCard area={area} index={index} />
-              </div>
-            ))}
-          </div>
-        </section>
-
         <section className="mt-16 md:mt-20 pb-6">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="text-2xl md:text-3xl">Work Experience Timeline</h2>
-            <p className="text-xs md:text-sm uppercase tracking-[0.2em] text-white/60">
-              Journey
-            </p>
+            <h2 className="text-2xl md:text-3xl">My Journey</h2>
           </div>
-          <div className="mt-8 border-l border-white/25 pl-6 md:pl-8 space-y-8">
-            {timeline.map((entry) => (
-              <div key={`${entry.period}-${entry.role}`} className="relative">
-                <div className="absolute -left-[1.95rem] md:-left-[2.45rem] top-1 w-3 h-3 rounded-full bg-white/90" />
-                <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-white/65">
-                  {entry.period}
-                </p>
-                <h3 className="mt-2 text-lg md:text-xl">{entry.role}</h3>
-                <p className="mt-1 text-sm md:text-base text-white/80">
-                  {entry.company}
-                </p>
-                <p className="mt-1 text-xs md:text-sm uppercase tracking-[0.12em] text-white/65">
-                  {entry.location}
-                </p>
-                <ul className="mt-3 space-y-2 text-sm md:text-base text-white/90">
-                  {entry.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </div>
+          <div className="mt-8 border-l border-white/20 pl-5 md:pl-8">
+            {timeline.map((entry, index) => (
+              <motion.div
+                key={`${entry.period}-${entry.role}`}
+                className="relative pb-4 md:pb-5"
+                onHoverStart={() => setActiveExperience(index)}
+                onHoverEnd={() => setActiveExperience(-1)}
+                layout
+                transition={{ type: "spring", stiffness: 260, damping: 28, mass: 0.7 }}
+              >
+                <div
+                  className={`absolute -left-[1.625rem] md:-left-[2.375rem] top-[1.18rem] h-3 w-3 rounded-full border border-white/70 ${
+                    activeExperience === index ? "bg-white" : "bg-transparent"
+                  }`}
+                />
+                <motion.div
+                  layout
+                  className={`w-full text-left rounded-xl border px-4 py-4 md:px-5 md:py-4 transition-colors ${
+                    activeExperience === index
+                      ? "border-white/35 bg-white/[0.08]"
+                      : "border-white/15 bg-white/[0.03]"
+                  }`}
+                  animate={{ y: activeExperience === index ? -2 : 0 }}
+                  transition={{ type: "spring", stiffness: 280, damping: 24 }}
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-[11px] md:text-xs uppercase tracking-[0.16em] text-white/60">
+                        {entry.period}
+                      </p>
+                      <h3 className="mt-1 text-base md:text-lg">{entry.role}</h3>
+                      <p className="mt-1 text-sm text-white/75">{entry.company}</p>
+                      <p className="mt-1 text-[11px] md:text-xs uppercase tracking-[0.14em] text-white/55">
+                        {entry.location}
+                      </p>
+                      <p className="mt-3 text-sm md:text-[15px] text-white/90 leading-relaxed">
+                        {entry.points[0]}
+                      </p>
+                    </div>
+                    <span className="text-lg leading-none text-white/75 pt-1">
+                      {activeExperience === index ? "●" : "○"}
+                    </span>
+                  </div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
         </section>

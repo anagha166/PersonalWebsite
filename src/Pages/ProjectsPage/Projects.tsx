@@ -1,14 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { IoLogoFigma } from "react-icons/io5";
-import { FaJava } from "react-icons/fa";
-import { FaPython } from "react-icons/fa";
-import { BiLogoBlender } from "react-icons/bi";
-import { SiCanva } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { FaHtml5 } from "react-icons/fa6";
-import { FaCss3Alt } from "react-icons/fa";
-import { FaWordpress } from "react-icons/fa";
 import annu from "/src/assets/Projects/Annu.png";
 import ascend from "/src/assets/Projects/Ascendtials.png";
 import consulting from "/src/assets/Projects/Consulting.png";
@@ -29,6 +20,13 @@ import { projectsData, ProjectData } from "../../Utils/projectData";
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("uiux-design");
+  const tableOfContents = [
+    { id: "uiux-design", label: "UI/UX Design" },
+    { id: "modeling-3d", label: "3D Modeling" },
+    { id: "hardware-projects", label: "Hardware" },
+    { id: "art-design-2d", label: "2D Art + Design" },
+  ];
 
   const openModal = (projectId: string) => {
     const project = projectsData.find(p => p.id === projectId);
@@ -42,6 +40,36 @@ const Projects = () => {
     setIsModalOpen(false);
     setSelectedProject(null);
   };
+
+  useEffect(() => {
+    const sectionElements = tableOfContents
+      .map((item) => document.getElementById(item.id))
+      .filter((element): element is HTMLElement => element !== null);
+
+    if (sectionElements.length === 0) return;
+
+    const updateActiveSection = () => {
+      const triggerLine = window.innerHeight * 0.32;
+      let nextActive = sectionElements[0].id;
+
+      for (const section of sectionElements) {
+        if (section.getBoundingClientRect().top <= triggerLine) {
+          nextActive = section.id;
+        }
+      }
+
+      setActiveSection(nextActive);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, [tableOfContents]);
 
 
   const project = (
@@ -86,60 +114,63 @@ const Projects = () => {
   };
 
   return (
-    <div className="mt-15 px-4 md:px-4 lg:px-16">
-      <motion.div
-        className="bg-[#748877]/95 text-white font-mono w-full max-w-6xl mx-auto my-8 md:my-16 lg:my-10 rounded-4xl p-6 md:p-8 lg:p-12 flex-col justify-center border border-white/10 shadow-xl"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.55 }}
-      >
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-20">
-          <h1 className="text-3xl md:text-2xl lg:text-3xl text-center lg:text-left">cd my-projects</h1>
-          <div className="text-sm md:text-base lg:text-lg mt-4 lg:mt-8 w-full lg:w-[45vw] pt-4">
-            Over the years, I've gained so many invaluable experiences and
-            chances to follow my passions. <br className="pt-4" />
-            <p className="text-smmd:text-base lg:text-lg w-full lg:w-[40vw] pt-4">
-              Here are some memorable projects that have stuck with me—but
-              there's still so much more to be done. I'm currently working on
-              new projects that I can't wait to share soon!
-            </p>
-            <div className="mt-6 lg:mt-8 pb-6 lg:pb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <p className="mr-2 text-lg md:text-xl lg:text-2xl">Skills:</p>
-              <div className="flex flex-wrap gap-3 text-2xl md:text-3xl lg:text-4xl">
-                <IoLogoFigma className="hover:scale-120" />
-                <FaJava className="hover:scale-120" />
-                <FaPython className="hover:scale-120" />
-                <BiLogoBlender className="hover:scale-120" />
-                <SiCanva className="hover:scale-120" />
-                <FaReact className="hover:scale-120" />
-                <FaHtml5 className="hover:scale-120" />
-                <FaCss3Alt className="hover:scale-120" />
-                <FaWordpress className="hover:scale-120" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-      <div className="flex justify-center">
-        <img className="max-w-full h-[10vw] floating-lizard" src={lizard} alt="" />
+    <div className="relative mt-15 px-4 md:px-4 lg:px-16 overflow-hidden">
+      <motion.img
+        src={lizard}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute z-0 w-28 md:w-36 lg:w-44 opacity-70"
+        animate={{
+          x: ["8vw", "72vw", "58vw", "18vw", "8vw"],
+          y: ["18vh", "26vh", "62vh", "72vh", "18vh"],
+          rotate: [0, 8, -10, 4, 0],
+        }}
+        transition={{
+          duration: 36,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
+      <div className="fixed right-8 xl:right-10 top-1/2 -translate-y-1/2 font-mono z-40 hidden lg:block">
+        <p className="text-[10px] uppercase tracking-[0.2em] text-white/55 mb-4">Contents</p>
+        <nav className="relative pl-5 flex flex-col gap-4">
+          <div className="absolute left-1.5 top-1 bottom-1 w-px bg-white/20" />
+          {tableOfContents.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={`relative text-xs tracking-[0.08em] transition-colors ${
+                activeSection === item.id ? "text-white" : "text-white/55 hover:text-white/85"
+              }`}
+            >
+              <span
+                className={`absolute -left-[16px] top-[5px] h-2.5 w-2.5 rounded-full transition-colors ${
+                  activeSection === item.id ? "bg-white" : "bg-white/35"
+                }`}
+              />
+              {item.label}
+            </a>
+          ))}
+        </nav>
       </div>
-      <motion.div
-        className="text-white font-mono w-full max-w-6xl mx-auto rounded-4xl mt-16 lg:mt-36 px-6 md:px-12 lg:px-36 py-12 lg:py-20 flex-col justify-end align-end items-center mb-12 lg:mb-20 border border-white/10 shadow-2xl"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.65 }}
-      >
+      <div className="relative z-10 w-full max-w-7xl mx-auto mt-8 lg:mt-12 mb-12 lg:mb-20 flex gap-6 md:gap-8 lg:gap-10">
         <motion.div
-          className="flex flex-col gap-4 py-8 lg:py-12"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-white font-mono flex-1 min-w-0 rounded-4xl px-6 md:px-12 lg:px-20 md:pr-28 lg:pr-40 py-12 lg:py-20 "
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.45 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.65 }}
         >
-          <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./ui/ux design</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-12">
+          <motion.div
+            id="uiux-design"
+            className="flex flex-col gap-4 py-8 lg:py-12 scroll-mt-28"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.45 }}
+          >
+            <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight">./ui/ux design</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-12">
             {project(
               "Redesigned the ASCENDtials nonprofit website to improve trust signals, accessibility, and key action flow.",
               ascend,
@@ -184,8 +215,9 @@ const Projects = () => {
             )}
           </div>
         </motion.div>
-        <motion.div
-          className="flex flex-col gap-4 py-8 lg:py-12"
+          <motion.div
+          id="modeling-3d"
+          className="flex flex-col gap-4 py-8 lg:py-12 scroll-mt-28"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -210,8 +242,9 @@ const Projects = () => {
             )}
           </div>
         </motion.div>
-        <motion.div
-          className="flex flex-col gap-4 py-8 lg:py-12"
+          <motion.div
+          id="hardware-projects"
+          className="flex flex-col gap-4 py-8 lg:py-12 scroll-mt-28"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -233,8 +266,9 @@ const Projects = () => {
             )}
           </div>
         </motion.div>
-        <motion.div
-          className="flex flex-col gap-4 py-8 lg:py-12"
+          <motion.div
+          id="art-design-2d"
+          className="flex flex-col gap-4 py-8 lg:py-12 scroll-mt-28"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -275,8 +309,9 @@ const Projects = () => {
               "video"
             )}
           </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
       
       {/* Project Modal */}
       <ProjectModal
